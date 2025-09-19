@@ -1,6 +1,9 @@
-import Image from "next/image";
+"use server";
 
-export default function Home() {
+import Image from "next/image";
+import { PartnerCarousel } from "@/components/partner-carousel";
+
+export default async function Home() {
     return (
         <div>
             <div className="flex min-h-svh flex-col items-center justify-center bg-black text-white">
@@ -16,6 +19,7 @@ export default function Home() {
                     priority
                 />
             </div>
+            <PartnerCarousel />
         </div>
     );
 }
