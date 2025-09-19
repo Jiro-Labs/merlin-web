@@ -76,7 +76,7 @@ export const Footer = () => {
                         end-to-end solution
                     </p>
                     <Input
-                        className="rounded-full bg-white text-black"
+                        className="block max-w-xs rounded-full bg-white text-black"
                         type="email"
                         placeholder="Your Email"
                     />
