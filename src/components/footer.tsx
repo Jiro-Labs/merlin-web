@@ -70,8 +70,8 @@ const Navigation = ({
 export const Footer = () => {
     return (
         <footer className="text-white">
-            <div className="flex gap-50 px-10">
-                <div className="max-w-lg space-y-5">
+            <div className="flex flex-col lg:flex-row px-10">
+                <div className="mr-30 my-10 max-w-lg space-y-5">
                     <Image src="/logo.png" alt="logo" height={10} width={180} />
                     <p className="text-gray-500">
                         Merlin Labs is a full-stack Web3 growth labs providing
@@ -86,8 +86,10 @@ export const Footer = () => {
                         SUBSCRIBE
                     </Button>
                 </div>
-                <Navigation title="Menu" items={menus["Menu"]} />
-                <Navigation title="Company" items={menus["Company"]} />
+                <div className="flex gap-50">
+                    <Navigation title="Menu" items={menus["Menu"]} />
+                    <Navigation title="Company" items={menus["Company"]} />
+                </div>
             </div>
             <div className="m-10 flex">
                 <div className="w-full flex-1" />
