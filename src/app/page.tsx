@@ -76,6 +76,74 @@ export default async function Home() {
                     <ChevronRight />
                 </Button>
             </div>
+
+            <div className="my-20 flex">
+                <div className="grid grid-cols-3 gap-5">
+                    <div className="relative mx-auto">
+                        <Image
+                            className="object-contain"
+                            src="/busy-business-people-walking.jpg"
+                            alt="reason"
+                            fill
+                        />
+                    </div>
+                    <div className="size-50 px-5 bg-white text-purple-900 font-bold text-right">
+                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
+                            <Image
+                                className="object-contain"
+                                src="/team.svg"
+                                alt="reason"
+                                fill
+                            />
+                        </div>
+                        <p className="text-3xl">35+</p>
+                        <p>Best Team</p>
+                    </div>
+                    <div className="w-full h-30 relative mx-auto">
+                        <Image
+                            className="object-contain"
+                            src="/busy-business-people-walking.jpg"
+                            alt="reason"
+                            fill
+                        />
+                    </div>
+                    <div className="aspect-square px-5 bg-white text-purple-900 font-bold text-right">
+                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
+                            <Image
+                                className="object-contain"
+                                src="/team.svg"
+                                alt="reason"
+                                fill
+                            />
+                        </div>
+                        <p className="text-3xl">35+</p>
+                        <p>Best Team</p>
+                    </div>
+                    <div className="w-full h-30 relative mx-auto">
+                        <Image
+                            className="object-contain"
+                            src="/busy-business-people-walking.jpg"
+                            alt="reason"
+                            fill
+                        />
+                    </div>
+                    <div className="aspect-square px-5 bg-white text-purple-900 font-bold text-right">
+                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
+                            <Image
+                                className="object-contain"
+                                src="/team.svg"
+                                alt="reason"
+                                fill
+                            />
+                        </div>
+                        <p className="text-3xl">35+</p>
+                        <p>Best Team</p>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     );
 }
