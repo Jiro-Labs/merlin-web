@@ -32,7 +32,7 @@ const navigationItems = [
 
 export const Header = () => {
     return (
-        <header className="bg-transparent fixed top-0 w-full z-50 text-white">
+        <header className="bg-white/10 backdrop-blur-lg shadow-lg shadow-slate-900/5 fixed top-0 w-full z-50 text-white">
             <div className="m-5 flex items-center justify-between">
                 <Image
                     className="h-full"
