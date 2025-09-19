@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const menus = {
-    ["Menu"]: [
+    Menu: [
         {
             title: "Home",
             href: "#",
@@ -18,7 +18,7 @@ const menus = {
             href: "#",
         },
     ],
-    ["Company"]: [
+    Company: [
         {
             title: "About",
             href: "#",
@@ -87,8 +87,8 @@ export const Footer = () => {
                     </Button>
                 </div>
                 <div className="flex gap-50">
-                    <Navigation title="Menu" items={menus["Menu"]} />
-                    <Navigation title="Company" items={menus["Company"]} />
+                    <Navigation title="Menu" items={menus.Menu} />
+                    <Navigation title="Company" items={menus.Company} />
                 </div>
             </div>
             <div className="m-10 flex">
