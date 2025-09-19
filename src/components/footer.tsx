@@ -57,7 +57,7 @@ const Navigation = ({
         <div className="space-y-4">
             <p className="font-bold mb-4">{title}</p>
             {items.map((item) => (
-                <li>
+                <li key={item.href}>
                     <Link href={item.href}>{item.title}</Link>
                 </li>
             ))}
@@ -70,12 +70,7 @@ export const Footer = () => {
         <footer className="text-white">
             <div className="flex gap-50 px-10">
                 <div className="max-w-lg space-y-5">
-                    <Image
-                        src="/logo.png"
-                        alt="logo"
-                        height={10}
-                        width={180}
-                    />
+                    <Image src="/logo.png" alt="logo" height={10} width={180} />
                     <p className="text-gray-500">
                         Merlin Labs is a full-stack Web3 growth labs providing
                         end-to-end solution
