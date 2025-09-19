@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { EventCard, EventCarousel } from "@/components/event-carousel";
 import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 export default async function Home() {
     return (
@@ -49,7 +51,9 @@ export default async function Home() {
             </EventCarousel>
 
             <div className="my-8">
-                <p className="text-center text-white font-bold text-4xl my-8">WHY CHOOSE US?</p>
+                <p className="text-center text-white font-bold text-4xl my-8">
+                    WHY CHOOSE US?
+                </p>
                 <div className="w-full h-100 relative mx-auto">
                     <Image
                         className="object-contain"
@@ -58,6 +62,19 @@ export default async function Home() {
                         fill
                     />
                 </div>
+            </div>
+
+            <div className="my-16 text-center">
+                <p className="text-white font-bold text-4xl">
+                    Transform Your Tech Vision Into Reality!
+                </p>
+                <p className="my-8 text-gray-500 text-xl">
+                    Let’s innovate and succeed together
+                </p>
+                <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
+                    <p>Contact Us</p>
+                    <ChevronRight />
+                </Button>
             </div>
         </div>
     );
