@@ -1,0 +1,126 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+
+const menus = {
+    Menu: [
+        {
+            title: "Home",
+            href: "#",
+        },
+        {
+            title: "Pricing",
+            href: "#",
+        },
+        {
+            title: "Case studies",
+            href: "#",
+        },
+    ],
+    Company: [
+        {
+            title: "About",
+            href: "#",
+        },
+        {
+            title: "Contact us",
+            href: "#",
+        },
+        {
+            title: "Careers",
+            href: "#",
+        },
+        {
+            title: "Help Center",
+            href: "#",
+        },
+        {
+            title: "Support",
+            href: "#",
+        },
+        {
+            title: "Legal",
+            href: "#",
+        },
+    ],
+};
+
+const Navigation = ({
+    title,
+    items,
+}: {
+    title: string;
+    items: { title: string; href: string }[];
+}) => {
+    return (
+        <div>
+            <p className="text-lg font-bold mb-6">{title}</p>
+            <ul className="space-y-4">
+                {items.map((item) => (
+                    <li key={item.title}>
+                        <Link href={item.href}>{item.title}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export const Footer = () => {
+    return (
+        <footer className="text-white">
+            <div className="flex flex-col lg:flex-row px-10">
+                <div className="mr-30 my-10 max-w-lg space-y-5">
+                    <Image src="/logo.png" alt="logo" height={10} width={180} />
+                    <p className="text-gray-500">
+                        Merlin Labs is a full-stack Web3 growth labs providing
+                        end-to-end solution
+                    </p>
+                    <Input
+                        className="block max-w-xs rounded-full bg-white text-black"
+                        type="email"
+                        placeholder="Your Email"
+                    />
+                    <Button className="!p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
+                        SUBSCRIBE
+                    </Button>
+                </div>
+                <div className="flex gap-50">
+                    <Navigation title="Menu" items={menus.Menu} />
+                    <Navigation title="Company" items={menus.Company} />
+                </div>
+            </div>
+            <div className="m-10 flex">
+                <div className="w-full flex-1" />
+                <div className="flex gap-5">
+                    <Image
+                        className="h-full"
+                        src="/facebook.svg"
+                        alt="logo"
+                        height={0}
+                        width={40}
+                    />
+                    <Image
+                        className="h-full"
+                        src="/x.svg"
+                        alt="logo"
+                        height={0}
+                        width={40}
+                    />
+                    <Image
+                        className="h-full"
+                        src="/linkedin.svg"
+                        alt="logo"
+                        height={0}
+                        width={40}
+                    />
+                </div>
+            </div>
+            <div className="border-t px-10 py-5 flex justify-between">
+                <p>Copyright © 2025 MerlinLabs. All rights reserved ®</p>
+                <p>www.MerlinLabs.co</p>
+            </div>
+        </footer>
+    );
+};
