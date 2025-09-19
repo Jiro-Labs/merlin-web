@@ -1,7 +1,8 @@
 "use server";
 
 import Image from "next/image";
-import { PartnerCarousel } from "@/components/partner-carousel";
+import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
+import { EventCard, EventCarousel } from "@/components/event-carousel";
 
 export default async function Home() {
     return (
@@ -19,7 +20,33 @@ export default async function Home() {
                     priority
                 />
             </div>
-            <PartnerCarousel />
+
+            <PartnerCarousel delay={1000}>
+                <PartnerLogo src="/partner/dsg.svg" alt="Dong Sai Gon" />
+                <PartnerLogo src="/partner/bingx.png" alt="BingX" />
+                <PartnerLogo src="/partner/okx.png" alt="OKX" />
+                <PartnerLogo src="/partner/starknet.svg" alt="STARKNET" />
+                <PartnerLogo src="/partner/sei.png" alt="sei" />
+                <PartnerLogo src="/partner/sui.png" alt="Sui" />
+                <PartnerLogo src="/partner/anomaly.svg" alt="ANOMALY" />
+                <PartnerLogo
+                    className="h-16"
+                    src="/partner/oio-followin.png"
+                    alt="OIO Followin"
+                />
+                <PartnerLogo
+                    className="h-16"
+                    src="/partner/dwf-labs.png"
+                    alt="DWF LABS"
+                />
+            </PartnerCarousel>
+
+            <EventCarousel delay={2000}>
+                <EventCard src="/event/1.jpg" alt="" />
+                <EventCard src="/event/2.jpg" alt="" />
+                <EventCard src="/event/3.jpg" alt="" />
+                <EventCard src="/event/4.jpg" alt="" />
+            </EventCarousel>
         </div>
     );
 }

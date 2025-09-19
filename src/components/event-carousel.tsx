@@ -1,30 +1,21 @@
 "use client";
 
 import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { PropsWithChildren } from "react";
+import Image from "next/image";
 
-export const PartnerLogo = ({
-    className,
-    src,
-    alt,
-}: {
-    className?: string;
-    src: string;
-    alt: string;
-}) => {
+export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
-        <CarouselItem className="pl-4 flex items-center basis-1/4 md:basis-1/6">
-            <div className={cn("w-full relative h-8 mx-auto", className)}>
+        <CarouselItem className="pl-4 flex items-center basis-1/2 md:basis-1/3">
+            <div className="w-full relative h-100 mx-auto">
                 <Image className="object-contain" src={src} alt={alt} fill />
             </div>
         </CarouselItem>
     );
 };
 
-export const PartnerCarousel = ({
+export const EventCarousel = ({
     children,
     delay,
 }: PropsWithChildren<{ delay: number }>) => {
