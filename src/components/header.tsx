@@ -1,12 +1,12 @@
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
 import {
     NavigationMenu,
     NavigationMenuLink,
     NavigationMenuList,
 } from "./ui/navigation-menu";
-import Link from "next/link";
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
 
 const navigationItems = [
     {
