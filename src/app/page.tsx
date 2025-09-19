@@ -47,6 +47,18 @@ export default async function Home() {
                 <EventCard src="/event/3.jpg" alt="" />
                 <EventCard src="/event/4.jpg" alt="" />
             </EventCarousel>
+
+            <div className="my-8">
+                <p className="text-center text-white font-bold text-4xl my-8">WHY CHOOSE US?</p>
+                <div className="w-full h-100 relative mx-auto">
+                    <Image
+                        className="object-contain"
+                        src="/reason.svg"
+                        alt="reason"
+                        fill
+                    />
+                </div>
+            </div>
         </div>
     );
 }
