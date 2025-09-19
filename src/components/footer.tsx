@@ -54,13 +54,15 @@ const Navigation = ({
     items: { title: string; href: string }[];
 }) => {
     return (
-        <div className="space-y-4">
-            <p className="font-bold mb-4">{title}</p>
-            {items.map((item) => (
-                <li key={item.href}>
-                    <Link href={item.href}>{item.title}</Link>
-                </li>
-            ))}
+        <div>
+            <p className="text-lg font-bold mb-6">{title}</p>
+            <ul className="space-y-4">
+                {items.map((item) => (
+                    <li key={item.title}>
+                        <Link href={item.href}>{item.title}</Link>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
