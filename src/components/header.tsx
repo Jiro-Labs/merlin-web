@@ -47,11 +47,13 @@ export const Header = () => {
                     <NavigationMenu viewport={false}>
                         <NavigationMenuList>
                             {navigationItems.map((item) => (
-                                <Link key={item.title} href={item.href}>
-                                    <NavigationMenuLink className="hover:bg-transparent hover:text-white">
-                                        {item.title}
-                                    </NavigationMenuLink>
-                                </Link>
+                                <NavigationMenuLink
+                                    key={item.title}
+                                    href={item.href}
+                                    className="hover:bg-transparent hover:text-white"
+                                >
+                                    {item.title}
+                                </NavigationMenuLink>
                             ))}
                         </NavigationMenuList>
                     </NavigationMenu>
