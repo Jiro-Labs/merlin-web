@@ -1,8 +1,8 @@
 "use server";
 
 import Image from "next/image";
-import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
 import { EventCard, EventCarousel } from "@/components/event-carousel";
+import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
 
 export default async function Home() {
     return (

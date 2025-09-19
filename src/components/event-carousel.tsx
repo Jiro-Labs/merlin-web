@@ -1,9 +1,9 @@
 "use client";
 
 import Autoplay from "embla-carousel-autoplay";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import { PropsWithChildren } from "react";
 import Image from "next/image";
+import type { PropsWithChildren } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
