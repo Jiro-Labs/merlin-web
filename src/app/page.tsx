@@ -1,10 +1,10 @@
 "use server";
 
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { EventCard, EventCarousel } from "@/components/event-carousel";
 import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 
 export default async function Home() {
     return (
