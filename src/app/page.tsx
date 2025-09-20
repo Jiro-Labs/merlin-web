@@ -5,6 +5,11 @@ import Image from "next/image";
 import { AboutUs } from "@/components/about-us";
 import { OurServices } from "@/components/our-services";
 import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
+import {
+    Statistics,
+    StatisticsDescription,
+    StatisticsNumber,
+} from "@/components/statistics";
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
