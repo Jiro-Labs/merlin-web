@@ -1,16 +1,16 @@
-'use server';
+"use server";
 
-import { ChevronRight } from 'lucide-react';
-import Image from 'next/image';
-import { EventCard, EventCarousel } from '@/components/event-carousel';
-import { FeatureCard, FeatureCardTitle } from '@/components/feature-card';
-import { PartnerCarousel, PartnerLogo } from '@/components/partner-carousel';
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { EventCard, EventCarousel } from "@/components/event-carousel";
+import { FeatureCard, FeatureCardTitle } from "@/components/feature-card";
+import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
 import {
     Statistics,
     StatisticsDescription,
     StatisticsNumber,
-} from '@/components/statistics';
-import { Button } from '@/components/ui/button';
+} from "@/components/statistics";
+import { Button } from "@/components/ui/button";
 
 export default async function Home() {
     return (
