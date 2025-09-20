@@ -107,7 +107,7 @@ export default async function Home() {
                         </StatisticsDescription>
                     </Statistics>
                 </div>
-                <div className="max-w-160 text-white">
+                <div className="mt-20 md:mt-0 max-w-160 text-white">
                     <p className="text-2xl font-bold">Company Profile</p>
                     <p className="my-3 text-4xl font-bold">About Us</p>
                     <p className="my-5 text-gray-500">
@@ -174,7 +174,7 @@ export default async function Home() {
                     </div>
                 </div>
 
-                <div className="max-w-160 mt-60 text-white">
+                <div className="max-w-160 mt-20 md:mt-60 text-white">
                     <p className="text-2xl font-bold">Our services</p>
                     <p className="my-3 text-4xl font-bold">WHAT WE OFFER</p>
                     <p className="my-5 text-gray-500">
