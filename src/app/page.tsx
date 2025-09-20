@@ -55,10 +55,9 @@ export default async function Home() {
                 <EventCard src="/event/4.jpg" alt="" />
             </EventCarousel>
 
-            <div className="my-20 flex">
-                {/* TODO: find better way to do this */}
+            <div className="mx-10 my-10 md:flex justify-between">
                 <div className="grid grid-cols-3 gap-5">
-                    <div className="w-full h-full relative">
+                    <div className="size-50 relative">
                         <Image
                             className="object-cover"
                             src="/busy-business-people-walking.jpg"
@@ -70,7 +69,7 @@ export default async function Home() {
                         <StatisticsNumber>35+</StatisticsNumber>
                         <StatisticsDescription>Best Team</StatisticsDescription>
                     </Statistics>
-                    <div className="w-full h-full relative">
+                    <div className="size-50 relative">
                         <Image
                             className="object-cover"
                             src="/close-up-businessman-with-digital-tablet.jpg"
@@ -88,7 +87,7 @@ export default async function Home() {
                             Total Client
                         </StatisticsDescription>
                     </Statistics>
-                    <div className="w-full h-full relative">
+                    <div className="size-50 relative">
                         <Image
                             className="object-cover"
                             src="/businessman-with-tablet-after-closing-deal.jpg"
@@ -107,19 +106,71 @@ export default async function Home() {
                         </StatisticsDescription>
                     </Statistics>
                 </div>
-                <div className="text-white">
+                <div className="max-w-160 text-white">
                     <p className="text-2xl font-bold">Company Profile</p>
-                    <p className="my-5 text-4xl font-bold">About Us</p>
+                    <p className="my-3 text-4xl font-bold">About Us</p>
                     <p className="my-5 text-gray-500">
                         Merlin Labs specializes in developing IT solutions and
                         comprehensive digital marketing strategies specifically
                         designed for the Web3 ecosystem.
                     </p>
                 </div>
-                <div></div>
-                <div className="text-white">
+            </div>
+
+            <div className="mx-10 my-10 md:flex justify-between">
+                <div className="grid grid-cols-3 gap-5">
+                    <div className="size-50 relative">
+                        <Image
+                            className="object-cover"
+                            src="/busy-business-people-walking.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics src="/team.svg" alt="team" orientation="top">
+                        <StatisticsNumber>35+</StatisticsNumber>
+                        <StatisticsDescription>Best Team</StatisticsDescription>
+                    </Statistics>
+                    <div className="size-50 relative">
+                        <Image
+                            className="object-cover"
+                            src="/close-up-businessman-with-digital-tablet.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics
+                        src="/client.svg"
+                        alt="client"
+                        orientation="bottom"
+                    >
+                        <StatisticsNumber>50+</StatisticsNumber>
+                        <StatisticsDescription>
+                            Total Client
+                        </StatisticsDescription>
+                    </Statistics>
+                    <div className="size-50 relative">
+                        <Image
+                            className="object-cover"
+                            src="/businessman-with-tablet-after-closing-deal.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics
+                        src="/experience.svg"
+                        alt="experience"
+                        orientation="bottom"
+                    >
+                        <StatisticsNumber>8+</StatisticsNumber>
+                        <StatisticsDescription>
+                            Years Of Industry Experience
+                        </StatisticsDescription>
+                    </Statistics>
+                </div>
+                <div className="max-w-160 text-white">
                     <p className="text-2xl font-bold">Our services</p>
-                    <p className="my-5 text-4xl font-bold">WHAT WE OFFER</p>
+                    <p className="my-3 text-4xl font-bold">WHAT WE OFFER</p>
                     <p className="my-5 text-gray-500">
                         We deliver solutions to empower your business to grow
                         securely and efficiently. Our solutions are designed to
