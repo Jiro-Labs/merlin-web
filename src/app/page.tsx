@@ -107,9 +107,30 @@ export default async function Home() {
                         </StatisticsDescription>
                     </Statistics>
                 </div>
+                <div className="text-white">
+                    <p className="text-2xl font-bold">Company Profile</p>
+                    <p className="my-5 text-4xl font-bold">About Us</p>
+                    <p className="my-5 text-gray-500">
+                        Merlin Labs specializes in developing IT solutions and
+                        comprehensive digital marketing strategies specifically
+                        designed for the Web3 ecosystem.
+                    </p>
+                </div>
                 <div></div>
-                <div></div>
-                <div></div>
+                <div className="text-white">
+                    <p className="text-2xl font-bold">Our services</p>
+                    <p className="my-5 text-4xl font-bold">WHAT WE OFFER</p>
+                    <p className="my-5 text-gray-500">
+                        We deliver solutions to empower your business to grow
+                        securely and efficiently. Our solutions are designed to
+                        help you achieve results through advanced technology and
+                        hands-on guidance.
+                    </p>
+                    <Button className="max-auto !p-5 bg-gray-500 hover:bg-violet-700 rounded-full">
+                        <p>All Services</p>
+                        <ChevronRight />
+                    </Button>
+                </div>
             </div>
 
             <div className="my-8">
