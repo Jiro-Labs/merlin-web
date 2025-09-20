@@ -1,16 +1,16 @@
-"use server";
+'use server';
 
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { EventCard, EventCarousel } from "@/components/event-carousel";
-import { FeatureCard, FeatureCardTitle } from "@/components/feature-card";
-import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
+import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { EventCard, EventCarousel } from '@/components/event-carousel';
+import { FeatureCard, FeatureCardTitle } from '@/components/feature-card';
+import { PartnerCarousel, PartnerLogo } from '@/components/partner-carousel';
 import {
     Statistics,
     StatisticsDescription,
     StatisticsNumber,
-} from "@/components/statistics";
-import { Button } from "@/components/ui/button";
+} from '@/components/statistics';
+import { Button } from '@/components/ui/button';
 
 export default async function Home() {
     return (
@@ -56,7 +56,7 @@ export default async function Home() {
                 <EventCard src="/event/4.jpg" alt="" />
             </EventCarousel>
 
-            <div className="mx-10 my-10 md:flex justify-between">
+            <div className="mx-10 my-20 md:flex justify-between">
                 <div className="grid grid-cols-3 gap-5">
                     <div className="size-50 relative">
                         <Image
@@ -118,7 +118,7 @@ export default async function Home() {
                 </div>
             </div>
 
-            <div className="mx-10 my-10 md:flex justify-between">
+            <div className="mx-10 my-20 md:flex justify-between">
                 <div className="grid grid-cols-2 gap-15">
                     <div className="mt-20 flex flex-col gap-5">
                         <FeatureCard
@@ -173,7 +173,8 @@ export default async function Home() {
                         </FeatureCard>
                     </div>
                 </div>
-                <div className="max-w-160 text-white">
+
+                <div className="max-w-160 mt-60 text-white">
                     <p className="text-2xl font-bold">Our services</p>
                     <p className="my-3 text-4xl font-bold">WHAT WE OFFER</p>
                     <p className="my-5 text-gray-500">
