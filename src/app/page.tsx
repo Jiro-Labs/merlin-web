@@ -1,10 +1,15 @@
-"use server";
+'use server';
 
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { EventCard, EventCarousel } from "@/components/event-carousel";
-import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
-import { Button } from "@/components/ui/button";
+import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { EventCard, EventCarousel } from '@/components/event-carousel';
+import { PartnerCarousel, PartnerLogo } from '@/components/partner-carousel';
+import { Button } from '@/components/ui/button';
+import {
+    Statistics,
+    StatisticsDescription,
+    StatisticsNumber,
+} from '@/components/statistics';
 
 export default async function Home() {
     return (
@@ -50,6 +55,63 @@ export default async function Home() {
                 <EventCard src="/event/4.jpg" alt="" />
             </EventCarousel>
 
+            <div className="my-20 flex">
+                {/* TODO: find better way to do this */}
+                <div className="grid grid-cols-3 gap-5">
+                    <div className="w-full h-full relative">
+                        <Image
+                            className="object-cover"
+                            src="/busy-business-people-walking.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics src="/team.svg" alt="team" orientation="top">
+                        <StatisticsNumber>35+</StatisticsNumber>
+                        <StatisticsDescription>Best Team</StatisticsDescription>
+                    </Statistics>
+                    <div className="w-full h-full relative">
+                        <Image
+                            className="object-cover"
+                            src="/close-up-businessman-with-digital-tablet.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics
+                        src="/client.svg"
+                        alt="client"
+                        orientation="bottom"
+                    >
+                        <StatisticsNumber>50+</StatisticsNumber>
+                        <StatisticsDescription>
+                            Total Client
+                        </StatisticsDescription>
+                    </Statistics>
+                    <div className="w-full h-full relative">
+                        <Image
+                            className="object-cover"
+                            src="/businessman-with-tablet-after-closing-deal.jpg"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <Statistics
+                        src="/experience.svg"
+                        alt="experience"
+                        orientation="bottom"
+                    >
+                        <StatisticsNumber>8+</StatisticsNumber>
+                        <StatisticsDescription>
+                            Years Of Industry Experience
+                        </StatisticsDescription>
+                    </Statistics>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
             <div className="my-8">
                 <p className="text-center text-white font-bold text-4xl my-8">
                     WHY CHOOSE US?
@@ -75,74 +137,6 @@ export default async function Home() {
                     <p>Contact Us</p>
                     <ChevronRight />
                 </Button>
-            </div>
-
-            <div className="my-20 flex">
-                <div className="grid grid-cols-3 gap-5">
-                    <div className="relative mx-auto">
-                        <Image
-                            className="object-contain"
-                            src="/busy-business-people-walking.jpg"
-                            alt="reason"
-                            fill
-                        />
-                    </div>
-                    <div className="size-50 px-5 bg-white text-purple-900 font-bold text-right">
-                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
-                            <Image
-                                className="object-contain"
-                                src="/team.svg"
-                                alt="reason"
-                                fill
-                            />
-                        </div>
-                        <p className="text-3xl">35+</p>
-                        <p>Best Team</p>
-                    </div>
-                    <div className="w-full h-30 relative mx-auto">
-                        <Image
-                            className="object-contain"
-                            src="/busy-business-people-walking.jpg"
-                            alt="reason"
-                            fill
-                        />
-                    </div>
-                    <div className="aspect-square px-5 bg-white text-purple-900 font-bold text-right">
-                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
-                            <Image
-                                className="object-contain"
-                                src="/team.svg"
-                                alt="reason"
-                                fill
-                            />
-                        </div>
-                        <p className="text-3xl">35+</p>
-                        <p>Best Team</p>
-                    </div>
-                    <div className="w-full h-30 relative mx-auto">
-                        <Image
-                            className="object-contain"
-                            src="/busy-business-people-walking.jpg"
-                            alt="reason"
-                            fill
-                        />
-                    </div>
-                    <div className="aspect-square px-5 bg-white text-purple-900 font-bold text-right">
-                        <div className="transform -translate-y-1/4 aspect-square h-25 relative">
-                            <Image
-                                className="object-contain"
-                                src="/team.svg"
-                                alt="reason"
-                                fill
-                            />
-                        </div>
-                        <p className="text-3xl">35+</p>
-                        <p>Best Team</p>
-                    </div>
-                </div>
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
         </div>
     );
