@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Merlin Labs",
-    description: "Merlin Labs Landing Page",
+    title: "Merlin Labs - Transform Your Tech Vision Into Reality!",
+    description: "Transform Your Tech Vision Into Reality!",
 };
 
 export default function RootLayout({
