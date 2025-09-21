@@ -2,14 +2,10 @@
 
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { AboutUs } from "@/components/about-us";
 import { OurServices } from "@/components/our-services";
 import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
-import {
-    Statistics,
-    StatisticsDescription,
-    StatisticsNumber,
-} from "@/components/statistics";
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
@@ -82,9 +78,9 @@ export default async function Home() {
                         Let's innovate and succeed together
                     </p>
                     <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
-                        <a href="#">
+                        <Link href="#">
                             <p>Contact Us</p>
-                        </a>
+                        </Link>
                         <ChevronRight />
                     </Button>
                 </section>

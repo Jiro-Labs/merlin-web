@@ -133,7 +133,7 @@ export const Footer = () => {
                                 Follow us:
                             </span>
                             <div className="flex space-x-4">
-                                <a
+                                <Link
                                     href="#"
                                     className="text-gray-400 hover:text-white transition-colors duration-200"
                                     aria-label="Facebook"
@@ -145,8 +145,8 @@ export const Footer = () => {
                                         width={24}
                                         className="h-6 w-6"
                                     />
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="#"
                                     className="text-gray-400 hover:text-white transition-colors duration-200"
                                     aria-label="X (Twitter)"
@@ -158,8 +158,8 @@ export const Footer = () => {
                                         width={24}
                                         className="h-6 w-6"
                                     />
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="#"
                                     className="text-gray-400 hover:text-white transition-colors duration-200"
                                     aria-label="LinkedIn"
@@ -171,7 +171,7 @@ export const Footer = () => {
                                         width={24}
                                         className="h-6 w-6"
                                     />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -184,13 +184,13 @@ export const Footer = () => {
                             Copyright © 2025 Merlin Labs. All rights reserved ®
                         </p>
                         <p className="hover:text-white transition-colors duration-200">
-                            <a
+                            <Link
                                 href="https://www.merlinlabs.co"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 www.MerlinLabs.co
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>
