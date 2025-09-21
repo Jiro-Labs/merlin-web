@@ -82,6 +82,7 @@ export const Header = () => {
                     {/* Mobile menu button */}
                     <div className="xl:hidden">
                         <button
+                            type="button"
                             onClick={() =>
                                 setIsMobileMenuOpen(!isMobileMenuOpen)
                             }
