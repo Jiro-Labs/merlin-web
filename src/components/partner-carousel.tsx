@@ -32,7 +32,7 @@ export const PartnerCarousel = ({
         <Carousel
             opts={{ loop: true }}
             className="p-5"
-            style={{ backgroundColor: '#1F2326' }}
+            style={{ backgroundColor: "#1F2326" }}
             plugins={[
                 Autoplay({
                     delay,

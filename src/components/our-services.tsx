@@ -1,6 +1,6 @@
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 export const OurServices = () => {
     return (
@@ -37,15 +37,15 @@ export const OurServices = () => {
 
                         {/* Description */}
                         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            We deliver solutions to empower your business to grow 
-                            securely and efficiently. Our solutions are designed to help 
-                            you achieve results through advanced technology and 
-                            hands-on guidance.
+                            We deliver solutions to empower your business to
+                            grow securely and efficiently. Our solutions are
+                            designed to help you achieve results through
+                            advanced technology and hands-on guidance.
                         </p>
 
                         {/* All Services Button */}
                         <div className="flex justify-center lg:justify-start pt-2">
-                            <Link 
+                            <Link
                                 href="#all-services"
                                 className="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 bg-gray-600/50 hover:bg-gray-500/50 text-white rounded-full font-medium transition-all duration-300 border border-gray-500/50 hover:border-gray-400/50 text-sm lg:text-base"
                             >

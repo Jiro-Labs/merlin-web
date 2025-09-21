@@ -72,7 +72,9 @@ export const Header = () => {
                     {/* Desktop CTA Button */}
                     <div className="hidden xl:block">
                         <Button className="px-4 py-2 lg:px-6 lg:py-3 flex items-center space-x-2 bg-violet-500 hover:bg-violet-700 rounded-full transition-colors duration-200">
-                            <span className="text-sm lg:text-base font-medium">GET STARTED</span>
+                            <span className="text-sm lg:text-base font-medium">
+                                GET STARTED
+                            </span>
                             <ChevronRight className="h-4 w-4 lg:h-5 lg:w-5" />
                         </Button>
                     </div>
@@ -80,7 +82,9 @@ export const Header = () => {
                     {/* Mobile menu button */}
                     <div className="xl:hidden">
                         <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            onClick={() =>
+                                setIsMobileMenuOpen(!isMobileMenuOpen)
+                            }
                             className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-violet-300 hover:bg-white/10 transition-colors duration-200"
                             aria-expanded="false"
                             aria-label="Toggle navigation menu"

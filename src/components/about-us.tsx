@@ -8,20 +8,23 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 // Event Carousel Components (merged from event-carousel.tsx)
 export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
-        <CarouselItem className="pl-0 mr-4 flex items-center" style={{ flexBasis: 'calc(100% / 3.5)' }}>
+        <CarouselItem
+            className="pl-0 mr-4 flex items-center"
+            style={{ flexBasis: "calc(100% / 3.5)" }}
+        >
             <div className="w-full relative h-60 md:h-80 mx-auto group overflow-hidden rounded-lg">
                 {/* Background Image - Grayscale (Silver) */}
-                <Image 
-                    className="object-cover transition-transform duration-300 group-hover:scale-105 grayscale" 
-                    src={src} 
-                    alt={alt} 
-                    fill 
+                <Image
+                    className="object-cover transition-transform duration-300 group-hover:scale-105 grayscale"
+                    src={src}
+                    alt={alt}
+                    fill
                 />
                 {/* Purple Tint from Bottom - 35% height with custom color */}
-                <div 
+                <div
                     className="absolute bottom-0 left-0 right-0 h-[35%] opacity-60"
                     style={{
-                        background: `linear-gradient(to top, #37108A, transparent)`
+                        background: `linear-gradient(to top, #37108A, transparent)`,
                     }}
                 ></div>
             </div>
@@ -50,7 +53,7 @@ export const EventCarousel = ({
 
 export const AboutUs = () => {
     return (
-        <section 
+        <section
             className="relative pt-16 lg:pt-24 pb-2 lg:pb-4 overflow-hidden bg-cover bg-center bg-no-repeat"
             style={{
                 backgroundImage: "url('/background-aboutus.svg')",
@@ -58,7 +61,7 @@ export const AboutUs = () => {
         >
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-black/20 z-0"></div>
-            
+
             {/* Event Carousel Section - Full Width */}
             <div className="relative z-10 w-full mb-16 lg:mb-20">
                 <EventCarousel delay={2000}>
@@ -102,9 +105,9 @@ export const AboutUs = () => {
 
                         {/* Description */}
                         <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            Merlin Labs specializes in developing IT solutions and 
-                            comprehensive digital marketing strategies specifically 
-                            designed for the Web3 ecosystem.
+                            Merlin Labs specializes in developing IT solutions
+                            and comprehensive digital marketing strategies
+                            specifically designed for the Web3 ecosystem.
                         </p>
                     </div>
                 </div>
