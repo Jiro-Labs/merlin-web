@@ -1,17 +1,14 @@
-"use client";
+'use client';
 
-import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
-import type { PropsWithChildren } from "react";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import Autoplay from 'embla-carousel-autoplay';
+import Image from 'next/image';
+import type { PropsWithChildren } from 'react';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 
 // Event Carousel Components (merged from event-carousel.tsx)
 export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
-        <CarouselItem
-            className="pl-0 mr-4 flex items-center"
-            style={{ flexBasis: "calc(100% / 3.5)" }}
-        >
+        <CarouselItem className="pl-0 mr-4 flex items-center flex-basis-2/7">
             <div className="w-full relative h-60 md:h-80 mx-auto group overflow-hidden rounded-lg">
                 {/* Background Image - Grayscale (Silver) */}
                 <Image

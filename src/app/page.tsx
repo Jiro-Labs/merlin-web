@@ -1,23 +1,18 @@
-﻿"use server";
+﻿'use server';
 
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { AboutUs } from "@/components/about-us";
-import { OurServices } from "@/components/our-services";
-import { PartnerCarousel, PartnerLogo } from "@/components/partner-carousel";
-import { Button } from "@/components/ui/button";
+import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AboutUs } from '@/components/about-us';
+import { OurServices } from '@/components/our-services';
+import { PartnerCarousel, PartnerLogo } from '@/components/partner-carousel';
+import { Button } from '@/components/ui/button';
 
 export default async function Home() {
     return (
         <div className="relative min-h-screen">
             <div className="relative z-10">
-                <section
-                    className="flex min-h-svh flex-col items-center justify-center text-white bg-cover bg-no-repeat"
-                    style={{
-                        backgroundImage: "url('/introduction-background.svg')",
-                    }}
-                >
+                <section className="flex min-h-svh flex-col items-center justify-center text-white bg-cover bg-no-repeat bg-[url(/introduction-background.svg)]">
                     <div className="absolute inset-0 bg-black/20 z-0"></div>
                     <div className="relative z-20 text-center space-y-5 px-4">
                         <h1 className="font-bold text-4xl sm:text-5xl lg:text-6xl">
@@ -60,11 +55,10 @@ export default async function Home() {
                         </h2>
                         <div className="w-full h-48 sm:h-64 lg:h-80 relative mx-auto">
                             <Image
-                                className="object-contain"
+                                className="p-0 m-0 object-contain"
                                 src="/reason.svg"
                                 alt="reason"
                                 fill
-                                style={{ padding: 0, margin: 0 }}
                             />
                         </div>
                     </div>
