@@ -24,7 +24,7 @@ export const FeatureCard = ({
         <Card
             className={cn("w-xs bg-zinc-900 border-none text-white", className)}
         >
-            <CardTitle className="ml-5 w-fit p-3 bg-linear-to-t from-violet-900 to-violet-600">
+            <CardTitle className="mx-auto md:ml-5 md:mr-0 w-fit p-3 bg-linear-to-t from-violet-900 to-violet-600">
                 <div className="relative size-8">
                     <Image
                         className="object-contain"
@@ -35,7 +35,7 @@ export const FeatureCard = ({
                 </div>
             </CardTitle>
             <CardContent>{children}</CardContent>
-            <CardFooter className="mt-10 flex gap-5">
+            <CardFooter className="mt-10 flex gap-5 justify-center md:justify-start items-center">
                 <p className="font-bold text-lg">Know More</p>
                 <ArrowUpRight className="text-violet-400" />
             </CardFooter>
