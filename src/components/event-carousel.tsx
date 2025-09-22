@@ -15,7 +15,7 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
                 />
                 {/* Purple gradient overlay from bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none" 
-                     style={{ height: '40%', bottom: 13, top: 'auto' }}
+                     style={{ height: '40%', bottom: 12, top: 'auto' }}
                 />
             </div>
         </CarouselItem>
@@ -38,5 +38,6 @@ export const EventCarousel = ({
         >
             <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">{children}</CarouselContent>
         </Carousel>
+
     );
 };
