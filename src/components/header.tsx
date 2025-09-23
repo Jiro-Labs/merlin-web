@@ -1,35 +1,35 @@
-"use client";
+'use client';
 
-import { ChevronRight, Menu, X } from "lucide-react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Button } from "./ui/button";
+import { ChevronRight, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { Button } from './ui/button';
 import {
     NavigationMenu,
     NavigationMenuLink,
     NavigationMenuList,
-} from "./ui/navigation-menu";
+} from './ui/navigation-menu';
 
 const navigationItems = [
     {
-        title: "HOME",
-        href: "#home",
+        title: 'HOME',
+        href: '#home',
     },
     {
-        title: "ABOUT",
-        href: "#about",
+        title: 'ABOUT',
+        href: '#about',
     },
     {
-        title: "RESOURCES",
-        href: "#resources",
+        title: 'RESOURCES',
+        href: '#resources',
     },
     {
-        title: "CONTACT",
-        href: "#contact",
+        title: 'CONTACT',
+        href: '#contact',
     },
     {
-        title: "LOGIN",
-        href: "#login",
+        title: 'LOGIN',
+        href: '#login',
     },
 ] as const;
 
@@ -42,7 +42,7 @@ export const Header = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
-        
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -54,7 +54,7 @@ export const Header = () => {
                 setIsMobileMenuOpen(false);
             }
         };
-        
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -66,7 +66,7 @@ export const Header = () => {
         } else {
             document.body.style.overflow = 'unset';
         }
-        
+
         return () => {
             document.body.style.overflow = 'unset';
         };
@@ -81,12 +81,13 @@ export const Header = () => {
     };
 
     return (
-        <header 
+        <header
             className={`
                 fixed top-0 w-full z-50 text-white transition-all duration-300 ease-in-out
-                ${isScrolled 
-                    ? 'bg-transparent backdrop-blur-xl shadow-2xl shadow-black/20' 
-                    : 'bg-transparent backdrop-blur-lg shadow-lg shadow-slate-900/5'
+                ${
+                    isScrolled
+                        ? 'bg-transparent backdrop-blur-xl shadow-2xl shadow-black/20'
+                        : 'bg-transparent backdrop-blur-lg shadow-lg shadow-slate-900/5'
                 }
             `}
         >
@@ -121,11 +122,13 @@ export const Header = () => {
                                         "
                                     >
                                         {item.title}
-                                        <span className="
+                                        <span
+                                            className="
                                             absolute bottom-0 left-1/2 w-0 h-0.5 bg-violet-500
                                             transition-all duration-200 ease-in-out
                                             group-hover:w-full group-hover:left-0
-                                        " />
+                                        "
+                                        />
                                     </NavigationMenuLink>
                                 ))}
                             </NavigationMenuList>
@@ -152,7 +155,7 @@ export const Header = () => {
 
                     {/* Desktop & Tablet CTA Button */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Button 
+                        <Button
                             className="
                                 px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
                                 hover:from-violet-600 hover:to-purple-700 
@@ -181,18 +184,26 @@ export const Header = () => {
                         aria-expanded={isMobileMenuOpen}
                     >
                         <div className="relative w-6 h-6">
-                            <Menu 
-                                size={24} 
+                            <Menu
+                                size={24}
                                 className={`
-                                    absolute inset-0 transition-all duration-300 transform
-                                    ${isMobileMenuOpen ? 'rotate-180 opacity-0 scale-0' : 'rotate-0 opacity-100 scale-100'}
+                                    absolute inset-1 transition-all duration-300 transform
+                                    ${
+                                        isMobileMenuOpen
+                                            ? 'rotate-180 opacity-0 scale-0'
+                                            : 'rotate-0 opacity-100 scale-100'
+                                    }
                                 `}
                             />
-                            <X 
-                                size={24} 
+                            <X
+                                size={24}
                                 className={`
-                                    absolute inset-0 transition-all duration-300 transform
-                                    ${isMobileMenuOpen ? 'rotate-0 opacity-100 scale-100' : 'rotate-180 opacity-0 scale-0'}
+                                    absolute inset-1 transition-all duration-300 transform
+                                    ${
+                                        isMobileMenuOpen
+                                            ? 'rotate-0 opacity-100 scale-100'
+                                            : 'rotate-180 opacity-0 scale-0'
+                                    }
                                 `}
                             />
                         </div>
@@ -201,32 +212,38 @@ export const Header = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div className={`
+            <div
+                className={`
                 md:hidden fixed inset-0 top-14 sm:top-16 z-40 transition-all duration-300 ease-in-out
-                ${isMobileMenuOpen 
-                    ? 'opacity-100 visible' 
-                    : 'opacity-0 invisible'
+                ${
+                    isMobileMenuOpen
+                        ? 'opacity-100 visible'
+                        : 'opacity-0 invisible'
                 }
-            `}>
+            `}
+            >
                 {/* Backdrop */}
-                <div 
+                <div
                     className={`
                         absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300
                         ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}
                     `}
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
-                
+
                 {/* Mobile Navigation Panel */}
-                <nav className={`
+                <nav
+                    className={`
                     relative bg-black/95 backdrop-blur-xl border-t border-white/10
                     shadow-2xl shadow-black/50 transition-all duration-300 ease-in-out
                     min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
-                    ${isMobileMenuOpen 
-                        ? 'translate-y-0 opacity-100' 
-                        : '-translate-y-4 opacity-0'
+                    ${
+                        isMobileMenuOpen
+                            ? 'translate-y-0 opacity-100'
+                            : '-translate-y-4 opacity-0'
                     }
-                `}>
+                `}
+                >
                     <div className="px-4 py-6 space-y-1 max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto">
                         {navigationItems.map((item, index) => (
                             <a
@@ -240,9 +257,10 @@ export const Header = () => {
                                     focus:outline-none focus:ring-2 focus:ring-violet-500/50
                                     border border-transparent hover:border-violet-500/30
                                     transform hover:translate-x-1 active:scale-95
-                                    ${isMobileMenuOpen 
-                                        ? `animate-fade-in-up` 
-                                        : ''
+                                    ${
+                                        isMobileMenuOpen
+                                            ? `animate-fade-in-up`
+                                            : ''
                                     }
                                 `}
                                 style={{
@@ -252,26 +270,26 @@ export const Header = () => {
                             >
                                 <div className="flex items-center justify-between">
                                     <span>{item.title}</span>
-                                    <ChevronRight 
-                                        size={16} 
-                                        className="opacity-0 transition-opacity duration-200 group-hover:opacity-100" 
+                                    <ChevronRight
+                                        size={16}
+                                        className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                                     />
                                 </div>
                             </a>
                         ))}
-                        
+
                         {/* Mobile CTA Section */}
-                        <div className={`
+                        <div
+                            className={`
                             pt-4 mt-4 border-t border-white/10
-                            ${isMobileMenuOpen 
-                                ? 'animate-fade-in-up' 
-                                : ''
-                            }
+                            ${isMobileMenuOpen ? 'animate-fade-in-up' : ''}
                         `}
-                        style={{
-                            animationDelay: '400ms',
-                        }}>
-                            <Button className="
+                            style={{
+                                animationDelay: '400ms',
+                            }}
+                        >
+                            <Button
+                                className="
                                 w-full px-4 py-3 bg-gradient-to-r from-violet-500 to-purple-600
                                 hover:from-violet-600 hover:to-purple-700 
                                 rounded-lg transition-all duration-300 ease-in-out
@@ -279,11 +297,12 @@ export const Header = () => {
                                 active:scale-95
                                 focus:outline-none focus:ring-2 focus:ring-violet-500/50
                                 text-sm font-semibold
-                            ">
+                            "
+                            >
                                 <span>GET STARTED</span>
                                 <ChevronRight size={16} className="ml-2" />
                             </Button>
-                            
+
                             {/* Contact Info */}
                             <div className="mt-4 text-center">
                                 <p className="text-gray-400 text-xs">
