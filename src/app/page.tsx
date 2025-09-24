@@ -1,19 +1,10 @@
 "use server";
 
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import { AboutUs } from "@/components/about-us";
 import { EventCard, EventCarousel } from "@/components/event-carousel";
-import { FeatureCard, FeatureCardTitle } from "@/components/feature-card";
 import { Hero } from "@/components/hero";
 import { OurServices } from "@/components/our-services";
 import { Partners } from "@/components/partners";
-import {
-    Statistics,
-    StatisticsDescription,
-    StatisticsNumber,
-} from "@/components/statistics";
-import { Button } from "@/components/ui/button";
 import { WhyChooseUs } from "@/components/why-choose-us";
 
 export default async function Home() {
@@ -34,7 +25,7 @@ export default async function Home() {
 
             <AboutUs />
 
-           <OurServices />
+            <OurServices />
 
             <WhyChooseUs />
         </div>

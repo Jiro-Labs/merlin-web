@@ -59,7 +59,7 @@ const Navigation = ({
             <ul className="space-y-3">
                 {items.map((item) => (
                     <li key={item.title}>
-                        <Link 
+                        <Link
                             href={item.href}
                             className="text-gray-400 hover:text-white transition-colors text-sm"
                         >
@@ -80,21 +80,24 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
                     {/* Company Info & Newsletter */}
                     <div className="lg:col-span-1 space-y-6">
-                        <Image 
-                            src="/logo.png" 
-                            alt="Merlin Labs - Web3 Solutions" 
-                            height={40} 
-                            width={160} 
+                        <Image
+                            src="/logo.png"
+                            alt="Merlin Labs - Web3 Solutions"
+                            height={40}
+                            width={160}
                             className="h-8 w-auto"
                         />
                         <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-                            Merlin Labs is a full-stack Web3 growth labs providing
-                            end-to-end solutions for the blockchain ecosystem.
+                            Merlin Labs is a full-stack Web3 growth labs
+                            providing end-to-end solutions for the blockchain
+                            ecosystem.
                         </p>
-                        
+
                         {/* Newsletter Signup */}
                         <div className="space-y-3">
-                            <h3 className="text-white font-medium text-sm">Stay Updated</h3>
+                            <h3 className="text-white font-medium text-sm">
+                                Stay Updated
+                            </h3>
                             <div className="flex flex-col gap-3">
                                 <Input
                                     className="w-full rounded-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:ring-violet-500/50"
@@ -107,86 +110,111 @@ export const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Navigation Links */}
                     <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-8">
                         <Navigation title="Menu" items={menus.Menu} />
                         <Navigation title="Company" items={menus.Company} />
-                        
+
                         {/* Social Links - Desktop only, mobile will show below */}
                         <div className="hidden sm:block">
                             <h3 className="text-lg font-bold mb-6">Connect</h3>
                             <div className="flex flex-col space-y-4">
-                                <a 
-                                    href="#" 
+                                <Link
+                                    href="#"
                                     className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                                     aria-label="Follow us on Facebook"
                                 >
-                                    <Image src="/facebook.svg" alt="" height={20} width={20} />
+                                    <Image
+                                        src="/facebook.svg"
+                                        alt=""
+                                        height={20}
+                                        width={20}
+                                    />
                                     <span className="text-sm">Facebook</span>
-                                </a>
-                                <a 
-                                    href="#" 
+                                </Link>
+                                <Link
+                                    href="#"
                                     className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                                     aria-label="Follow us on X (Twitter)"
                                 >
-                                    <Image src="/x.svg" alt="" height={20} width={20} />
+                                    <Image
+                                        src="/x.svg"
+                                        alt=""
+                                        height={20}
+                                        width={20}
+                                    />
                                     <span className="text-sm">X (Twitter)</span>
-                                </a>
-                                <a 
-                                    href="#" 
+                                </Link>
+                                <Link
+                                    href="#"
                                     className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                                     aria-label="Connect on LinkedIn"
                                 >
-                                    <Image src="/linkedin.svg" alt="" height={20} width={20} />
+                                    <Image
+                                        src="/linkedin.svg"
+                                        alt=""
+                                        height={20}
+                                        width={20}
+                                    />
                                     <span className="text-sm">LinkedIn</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Mobile Social Links */}
                 <div className="sm:hidden mt-8 pt-8 border-t border-white/10">
                     <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
                     <div className="flex justify-center space-x-6">
-                        <a 
-                            href="#" 
+                        <Link
+                            href="#"
                             className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
                             aria-label="Follow us on Facebook"
                         >
-                            <Image src="/facebook.svg" alt="" height={24} width={24} />
-                        </a>
-                        <a 
-                            href="#" 
+                            <Image
+                                src="/facebook.svg"
+                                alt=""
+                                height={24}
+                                width={24}
+                            />
+                        </Link>
+                        <Link
+                            href="#"
                             className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
                             aria-label="Follow us on X (Twitter)"
                         >
                             <Image src="/x.svg" alt="" height={24} width={24} />
-                        </a>
-                        <a 
-                            href="#" 
+                        </Link>
+                        <Link
+                            href="#"
                             className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
                             aria-label="Connect on LinkedIn"
                         >
-                            <Image src="/linkedin.svg" alt="" height={24} width={24} />
-                        </a>
+                            <Image
+                                src="/linkedin.svg"
+                                alt=""
+                                height={24}
+                                width={24}
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>
-            
+
             {/* Footer Bottom */}
             <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-6">
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                     <p>Copyright © 2025 MerlinLabs. All rights reserved ®</p>
-                    <a 
-                        href="https://www.MerlinLabs.co" 
+                    <Link
+                        href="https://www.MerlinLabs.co"
                         className="hover:text-white transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         www.MerlinLabs.co
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>

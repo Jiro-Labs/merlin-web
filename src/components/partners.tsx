@@ -75,9 +75,9 @@ interface PartnersProps {
     partners?: PartnerData[];
 }
 
-export const Partners = ({ 
+export const Partners = ({
     delay = 1000,
-    partners = partnersData
+    partners = partnersData,
 }: PartnersProps) => {
     return (
         <section className="py-2">

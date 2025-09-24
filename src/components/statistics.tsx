@@ -51,7 +51,7 @@ export const Statistics = ({
                         : "top-[-35] rotate-180",
                 )}
             >
-               {/* <Image className="object-contain" src="/line.svg" alt="" fill /> */}
+                {/* <Image className="object-contain" src="/line.svg" alt="" fill /> */}
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 "use client";
 
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 import type { PropsWithChildren } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
@@ -8,14 +9,16 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
         <CarouselItem className="pl-2 sm:pl-3 md:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
             <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden group">
-                <img 
-                    className="object-contain w-full h-full filter grayscale brightness-75 transition-all duration-300" 
-                    src={src} 
+                <Image
+                    className="object-contain w-full h-full filter grayscale brightness-75 transition-all duration-300"
+                    src={src}
                     alt={alt}
+                    fill
                 />
                 {/* Purple gradient overlay from bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none" 
-                     style={{ height: '40%', bottom: 12, top: 'auto' }}
+                <div
+                    className="absolute inset-0 bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none"
+                    style={{ height: "40%", bottom: 12, top: "auto" }}
                 />
             </div>
         </CarouselItem>
@@ -36,8 +39,9 @@ export const EventCarousel = ({
                 }),
             ]}
         >
-            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">{children}</CarouselContent>
+            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
+                {children}
+            </CarouselContent>
         </Carousel>
-
     );
 };

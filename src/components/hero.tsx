@@ -6,10 +6,10 @@ interface HeroProps {
     backgroundImage?: string;
 }
 
-export const Hero = ({ 
-    title = "MERLIN LABS", 
+export const Hero = ({
+    title = "MERLIN LABS",
     subtitle = "Consulting | Marketing | Solution",
-    backgroundImage = "/introduction-background.svg"
+    backgroundImage = "/introduction-background.svg",
 }: HeroProps) => {
     return (
         <section className="flex min-h-[100dvh] flex-col items-center justify-center text-white relative overflow-hidden">
@@ -22,7 +22,7 @@ export const Hero = ({
                     {subtitle}
                 </p>
             </div>
-            
+
             {/* Background Image */}
             <Image
                 className="absolute inset-0 object-cover scale-105 transition-transform duration-1000 ease-out"
@@ -33,7 +33,7 @@ export const Hero = ({
                 sizes="100vw"
                 quality={90}
             />
-            
+
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/30 backdrop-blur-[0.5px]" />
         </section>

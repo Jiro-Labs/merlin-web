@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface WhyChooseUsProps {
@@ -17,7 +17,7 @@ export const WhyChooseUs = ({
     imageAlt = "reason",
     ctaTitle = "TRANSFORM YOUR TECH VISION INTO REALITY!",
     ctaSubtitle = "Let's innovate and succeed together",
-    ctaButtonText = "Contact Us"
+    ctaButtonText = "Contact Us",
 }: WhyChooseUsProps) => {
     return (
         <>

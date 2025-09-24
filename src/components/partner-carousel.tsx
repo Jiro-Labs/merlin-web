@@ -17,7 +17,12 @@ export const PartnerLogo = ({
 }) => {
     return (
         <CarouselItem className="pl-2 sm:pl-3 md:pl-4 flex items-center basis-1/3 sm:basis-1/4 lg:basis-1/6">
-            <div className={cn("w-full relative h-8 sm:h-10 md:h-12 mx-auto", className)}>
+            <div
+                className={cn(
+                    "w-full relative h-8 sm:h-10 md:h-12 mx-auto",
+                    className,
+                )}
+            >
                 <Image className="object-contain" src={src} alt={alt} fill />
             </div>
         </CarouselItem>
@@ -38,7 +43,9 @@ export const PartnerCarousel = ({
                 }),
             ]}
         >
-            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">{children}</CarouselContent>
+            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
+                {children}
+            </CarouselContent>
         </Carousel>
     );
 };

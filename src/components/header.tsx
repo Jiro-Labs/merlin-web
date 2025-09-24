@@ -1,35 +1,35 @@
-'use client';
+"use client";
 
-import { ChevronRight, Menu, X } from 'lucide-react';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { Button } from './ui/button';
+import { ChevronRight, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 import {
     NavigationMenu,
     NavigationMenuLink,
     NavigationMenuList,
-} from './ui/navigation-menu';
+} from "./ui/navigation-menu";
 
 const navigationItems = [
     {
-        title: 'HOME',
-        href: '#home',
+        title: "HOME",
+        href: "#home",
     },
     {
-        title: 'ABOUT',
-        href: '#about',
+        title: "ABOUT",
+        href: "#about",
     },
     {
-        title: 'RESOURCES',
-        href: '#resources',
+        title: "RESOURCES",
+        href: "#resources",
     },
     {
-        title: 'CONTACT',
-        href: '#contact',
+        title: "CONTACT",
+        href: "#contact",
     },
     {
-        title: 'LOGIN',
-        href: '#login',
+        title: "LOGIN",
+        href: "#login",
     },
 ] as const;
 
@@ -43,8 +43,8 @@ export const Header = () => {
             setIsScrolled(window.scrollY > 10);
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     // Handle mobile menu close on resize
@@ -55,20 +55,20 @@ export const Header = () => {
             }
         };
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     // Prevent body scroll when mobile menu is open
     useEffect(() => {
         if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = "unset";
         }
 
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = "unset";
         };
     }, [isMobileMenuOpen]);
 
@@ -86,8 +86,8 @@ export const Header = () => {
                 fixed top-0 w-full z-50 text-white transition-all duration-300 ease-in-out
                 ${
                     isScrolled
-                        ? 'bg-transparent backdrop-blur-xl shadow-2xl shadow-black/20'
-                        : 'bg-transparent backdrop-blur-lg shadow-lg shadow-slate-900/5'
+                        ? "bg-transparent backdrop-blur-xl shadow-2xl shadow-black/20"
+                        : "bg-transparent backdrop-blur-lg shadow-lg shadow-slate-900/5"
                 }
             `}
         >
@@ -177,7 +177,7 @@ export const Header = () => {
                         className={`
                             md:hidden p-2 rounded-lg transition-all duration-200
                             hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                            ${isMobileMenuOpen ? 'bg-white/10' : ''}
+                            ${isMobileMenuOpen ? "bg-white/10" : ""}
                         `}
                         onClick={toggleMobileMenu}
                         aria-label="Toggle navigation menu"
@@ -190,8 +190,8 @@ export const Header = () => {
                                     absolute inset-1 transition-all duration-300 transform
                                     ${
                                         isMobileMenuOpen
-                                            ? 'rotate-180 opacity-0 scale-0'
-                                            : 'rotate-0 opacity-100 scale-100'
+                                            ? "rotate-180 opacity-0 scale-0"
+                                            : "rotate-0 opacity-100 scale-100"
                                     }
                                 `}
                             />
@@ -201,8 +201,8 @@ export const Header = () => {
                                     absolute inset-1 transition-all duration-300 transform
                                     ${
                                         isMobileMenuOpen
-                                            ? 'rotate-0 opacity-100 scale-100'
-                                            : 'rotate-180 opacity-0 scale-0'
+                                            ? "rotate-0 opacity-100 scale-100"
+                                            : "rotate-180 opacity-0 scale-0"
                                     }
                                 `}
                             />
@@ -217,16 +217,16 @@ export const Header = () => {
                 md:hidden fixed inset-0 top-14 sm:top-16 z-40 transition-all duration-300 ease-in-out
                 ${
                     isMobileMenuOpen
-                        ? 'opacity-100 visible'
-                        : 'opacity-0 invisible'
+                        ? "opacity-100 visible"
+                        : "opacity-0 invisible"
                 }
             `}
             >
                 {/* Backdrop */}
-                <div
+                <Button
                     className={`
                         absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300
-                        ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}
+                        ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
                     `}
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
@@ -239,8 +239,8 @@ export const Header = () => {
                     min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
                     ${
                         isMobileMenuOpen
-                            ? 'translate-y-0 opacity-100'
-                            : '-translate-y-4 opacity-0'
+                            ? "translate-y-0 opacity-100"
+                            : "-translate-y-4 opacity-0"
                     }
                 `}
                 >
@@ -260,7 +260,7 @@ export const Header = () => {
                                     ${
                                         isMobileMenuOpen
                                             ? `animate-fade-in-up`
-                                            : ''
+                                            : ""
                                     }
                                 `}
                                 style={{
@@ -282,10 +282,10 @@ export const Header = () => {
                         <div
                             className={`
                             pt-4 mt-4 border-t border-white/10
-                            ${isMobileMenuOpen ? 'animate-fade-in-up' : ''}
+                            ${isMobileMenuOpen ? "animate-fade-in-up" : ""}
                         `}
                             style={{
-                                animationDelay: '400ms',
+                                animationDelay: "400ms",
                             }}
                         >
                             <Button
