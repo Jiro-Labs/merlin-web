@@ -14,9 +14,9 @@ export default async function Home() {
             <Hero />
 
             {/* Partners Section */}
-            <Partners delay={1000} />
+            <Partners speed={1} />
 
-            <EventCarousel delay={2000}>
+            <EventCarousel speed={2}>
                 <EventCard src="/event/1.jpg" alt="" />
                 <EventCard src="/event/2.jpg" alt="" />
                 <EventCard src="/event/3.jpg" alt="" />

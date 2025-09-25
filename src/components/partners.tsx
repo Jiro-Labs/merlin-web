@@ -71,18 +71,18 @@ const partnersData: PartnerData[] = [
 interface PartnersProps {
     title?: string;
     subtitle?: string;
-    delay?: number;
+    speed?: number;
     partners?: PartnerData[];
 }
 
 export const Partners = ({
-    delay = 1000,
+    speed = 1000,
     partners = partnersData,
 }: PartnersProps) => {
     return (
         <section className="py-2">
             {/* Partner Carousel */}
-            <PartnerCarousel delay={delay}>
+            <PartnerCarousel speed={speed}>
                 {partners.map((partner) => (
                     <PartnerLogo
                         key={partner.id}

@@ -1,6 +1,6 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
 import type { PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
@@ -31,17 +31,13 @@ export const PartnerLogo = ({
 
 export const PartnerCarousel = ({
     children,
-    delay,
-}: PropsWithChildren<{ delay: number }>) => {
+    speed,
+}: PropsWithChildren<{ speed: number }>) => {
     return (
         <Carousel
             opts={{ loop: true }}
             className="bg-black px-2 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6"
-            plugins={[
-                Autoplay({
-                    delay,
-                }),
-            ]}
+            plugins={[AutoScroll({ speed })]}
         >
             <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
                 {children}
