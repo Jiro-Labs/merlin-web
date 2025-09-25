@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 interface WhyChooseUsProps {
@@ -37,10 +38,12 @@ export const WhyChooseUs = ({
                 <p className="my-4 md:my-8 text-gray-500 text-lg sm:text-xl">
                     {ctaSubtitle}
                 </p>
-                <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
-                    <p>{ctaButtonText}</p>
-                    <ChevronRight />
-                </Button>
+                <Link href="mailto:contact@merlin-labs.co">
+                    <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
+                        <p>{ctaButtonText}</p>
+                        <ChevronRight />
+                    </Button>
+                </Link>
             </div>
         </>
     );
