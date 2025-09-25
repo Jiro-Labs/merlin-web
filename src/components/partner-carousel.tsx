@@ -36,7 +36,8 @@ export const PartnerCarousel = ({
     return (
         <Carousel
             opts={{ loop: true }}
-            className="bg-black px-2 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6"
+            className="px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4"
+            style={{ backgroundColor: '#121212' }}
             plugins={[AutoScroll({ speed })]}
         >
             <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">

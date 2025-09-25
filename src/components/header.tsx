@@ -83,11 +83,12 @@ export const Header = () => {
     return (
         <header
             className={`
-                fixed top-0 w-full z-50 text-white transition-all duration-300 ease-in-out
+                fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
+                md:text-white text-black
                 ${
                     isScrolled
-                        ? "bg-transparent backdrop-blur-xl shadow-2xl shadow-black/20"
-                        : "bg-transparent backdrop-blur-lg shadow-lg shadow-slate-900/5"
+                        ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
+                        : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
                 }
             `}
         >
@@ -95,8 +96,19 @@ export const Header = () => {
                 <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 z-50">
+                        {/* Mobile Logo (0-767px) */}
                         <Image
-                            className="h-7 w-auto sm:h-8 md:h-10 lg:h-12 transition-all duration-300"
+                            className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
+                            src="/logo-mobile.svg"
+                            alt="Merlin Labs - Web3 Solutions"
+                            height={32}
+                            width={120}
+                            priority
+                        />
+                        
+                        {/* Desktop & Tablet Logo (768px+) */}
+                        <Image
+                            className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"
                             src="/logo.png"
                             alt="Merlin Labs - Web3 Solutions"
                             height={48}
@@ -143,7 +155,7 @@ export const Header = () => {
                                     key={item.title}
                                     href={item.href}
                                     className="
-                                        text-sm font-medium transition-colors duration-200
+                                        text-sm font-medium transition-colors duration-200 text-white
                                         hover:text-violet-300 focus:outline-none focus:text-violet-300
                                     "
                                 >
@@ -176,8 +188,8 @@ export const Header = () => {
                         size="sm"
                         className={`
                             md:hidden p-2 rounded-lg transition-all duration-200
-                            hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                            ${isMobileMenuOpen ? "bg-white/10" : ""}
+                            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                            ${isMobileMenuOpen ? "bg-gray-100" : ""}
                         `}
                         onClick={toggleMobileMenu}
                         aria-label="Toggle navigation menu"
@@ -187,7 +199,7 @@ export const Header = () => {
                             <Menu
                                 size={24}
                                 className={`
-                                    absolute inset-1 transition-all duration-300 transform
+                                    absolute inset-1 transition-all duration-300 transform text-black
                                     ${
                                         isMobileMenuOpen
                                             ? "rotate-180 opacity-0 scale-0"
@@ -198,7 +210,7 @@ export const Header = () => {
                             <X
                                 size={24}
                                 className={`
-                                    absolute inset-1 transition-all duration-300 transform
+                                    absolute inset-1 transition-all duration-300 transform text-black
                                     ${
                                         isMobileMenuOpen
                                             ? "rotate-0 opacity-100 scale-100"
@@ -241,7 +253,7 @@ export const Header = () => {
                                 key={item.title}
                                 href={item.href}
                                 className={`
-                                    block px-3 py-3 text-base font-medium rounded-lg
+                                    block px-3 py-3 text-base font-medium rounded-lg text-white
                                     transition-all duration-200 ease-in-out
                                     hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-purple-500/20
                                     hover:text-white hover:shadow-lg hover:shadow-violet-500/10
@@ -263,7 +275,7 @@ export const Header = () => {
                                     <span>{item.title}</span>
                                     <ChevronRight
                                         size={16}
-                                        className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                                        className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 text-white"
                                     />
                                 </div>
                             </a>

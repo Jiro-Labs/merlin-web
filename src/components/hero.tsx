@@ -3,13 +3,17 @@ import Image from "next/image";
 interface HeroProps {
     title?: string;
     subtitle?: string;
-    backgroundImage?: string;
+    mobileBackground?: string;
+    tabletBackground?: string;
+    desktopBackground?: string;
 }
 
 export const Hero = ({
     title = "MERLIN LABS",
     subtitle = "Consulting | Marketing | Solution",
-    backgroundImage = "/introduction-background.svg",
+    mobileBackground = "/introduction-background-mobile.svg",
+    tabletBackground = "/introduction-background-tablet.svg", 
+    desktopBackground = "/introduction-background.svg",
 }: HeroProps) => {
     return (
         <section className="flex min-h-[100dvh] flex-col items-center justify-center text-white relative overflow-hidden">
@@ -23,15 +27,49 @@ export const Hero = ({
                 </p>
             </div>
 
-            {/* Background Image */}
+            {/* iPhone Background (0-480px) - Portrait & Small screens */}
             <Image
-                className="absolute inset-0 object-cover scale-105 transition-transform duration-1000 ease-out"
-                src={backgroundImage}
-                alt="Merlin Labs Web3 Solutions Background"
+                className="absolute inset-0 object-cover object-center transition-transform duration-1000 ease-out sm:hidden"
+                src={mobileBackground}
+                alt="Merlin Labs Web3 Solutions Background - iPhone"
                 fill
                 priority
                 sizes="100vw"
-                quality={90}
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center center'
+                }}
+            />
+
+            {/* iPhone Large & iPad Mini Background (481px-834px) */}
+            <Image
+                className="absolute inset-0 object-cover object-center transition-transform duration-1000 ease-out hidden sm:block lg:hidden"
+                src={tabletBackground}
+                alt="Merlin Labs Web3 Solutions Background - iPad"
+                fill
+                priority
+                sizes="100vw"
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center center'
+                }}
+            />
+
+            {/* iPad Pro & Desktop Background (835px+) */}
+            <Image
+                className="absolute inset-0 object-cover object-center transition-transform duration-1000 ease-out hidden lg:block"
+                src={desktopBackground}
+                alt="Merlin Labs Web3 Solutions Background - Desktop"
+                fill
+                priority
+                sizes="100vw"
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center center'
+                }}
             />
 
             {/* Overlay for better text readability */}
