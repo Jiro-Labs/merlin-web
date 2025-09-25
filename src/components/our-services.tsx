@@ -17,8 +17,8 @@ export const OurServices = ({
 }: OurServicesProps) => {
     return (
         <div className="px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20">
-            {/* Add 5% margin from left and right on desktop only */}
-            <div className="md:mx-[5%]">
+            {/* Add 5% margin from left and right to match About Us */}
+            <div className="mx-[5%]">
                 <div className="flex flex-col xl:flex-row xl:justify-between gap-8 xl:gap-12">
                     {/* Services Grid */}
                     <div className="w-full xl:flex-1">
@@ -29,7 +29,7 @@ export const OurServices = ({
                                 <FeatureCard
                                     src="/infrastructure.svg"
                                     alt="infrastructure"
-                                    className="w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
+                                    className="w-[85%] md:w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
                                 >
                                     <div className="text-left">
                                         <FeatureCardTitle>
@@ -46,7 +46,7 @@ export const OurServices = ({
                                 <FeatureCard
                                     src="/marketing-service.svg"
                                     alt="Marketing Services"
-                                    className="w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
+                                    className="w-[85%] md:w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
                                 >
                                     <div className="text-left">
                                         <FeatureCardTitle>
@@ -69,7 +69,7 @@ export const OurServices = ({
                                 <FeatureCard
                                     src="/it-consulting.svg"
                                     alt="it consulting"
-                                    className="w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
+                                    className="w-[85%] md:w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
                                 >
                                     <div className="text-left">
                                         <FeatureCardTitle>
@@ -85,7 +85,7 @@ export const OurServices = ({
                                 <FeatureCard
                                     src="/listing-support.svg"
                                     alt="listing support"
-                                    className="w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
+                                    className="w-[85%] md:w-full max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm"
                                 >
                                     <div className="text-left">
                                         <FeatureCardTitle>
