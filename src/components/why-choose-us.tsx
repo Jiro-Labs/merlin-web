@@ -13,23 +13,22 @@ interface WhyChooseUsProps {
 
 export const WhyChooseUs = ({
     title = "WHY CHOOSE US?",
-    imageSrc = "/reason.svg",
-    imageAlt = "reason",
     ctaTitle = "TRANSFORM YOUR TECH VISION INTO REALITY!",
     ctaSubtitle = "Let's innovate and succeed together",
     ctaButtonText = "Contact Us",
 }: WhyChooseUsProps) => {
     return (
         <>
-            <div className="my-4 md:my-8">
+            <div className="hidden md:block my-4 md:my-8">
                 <p className="text-center text-white font-bold text-2xl sm:text-3xl md:text-4xl my-4 md:my-8">
                     {title}
                 </p>
                 <div className="w-full relative mx-auto">
                     {/* biome-ignore lint/performance/noImgElement: use img instead of Image for responsive image */}
-                    <img className="mx-auto" src={imageSrc} alt={imageAlt} />
+                    <img className="mx-auto" src="/reason.svg" alt="reason" />
                 </div>
             </div>
+            <img className="md:hidden w-full" src="/reason-mobile.svg" alt="reason" />
 
             <div className="my-8 md:my-16 text-center">
                 <p className="text-white font-bold text-2xl sm:text-3xl md:text-4xl">
