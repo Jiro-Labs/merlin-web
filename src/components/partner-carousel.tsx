@@ -1,10 +1,10 @@
 "use client";
 
+import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
 import type { PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import AutoScroll from "embla-carousel-auto-scroll";
 
 export const PartnerLogo = ({
     className,
