@@ -14,8 +14,7 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
                     src={src}
                     alt={alt}
                     fill
-                >
-                </Image>
+                ></Image>
                 {/* Purple gradient overlay from bottom */}
                 <div className="h-2/5 absolute inset-0 top-auto bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none" />
             </div>
