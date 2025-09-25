@@ -222,15 +222,6 @@ export const Header = () => {
                 }
             `}
             >
-                {/* Backdrop */}
-                <Button
-                    className={`
-                        absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300
-                        ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
-                    `}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                />
-
                 {/* Mobile Navigation Panel */}
                 <nav
                     className={`
