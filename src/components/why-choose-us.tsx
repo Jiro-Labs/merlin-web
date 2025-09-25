@@ -1,5 +1,4 @@
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface WhyChooseUsProps {
@@ -25,13 +24,9 @@ export const WhyChooseUs = ({
                 <p className="text-center text-white font-bold text-2xl sm:text-3xl md:text-4xl my-4 md:my-8">
                     {title}
                 </p>
-                <div className="w-full h-60 sm:h-80 md:h-100 relative mx-auto">
-                    <Image
-                        className="object-contain"
-                        src={imageSrc}
-                        alt={imageAlt}
-                        fill
-                    />
+                <div className="w-full relative mx-auto">
+                    {/* biome-ignore lint/performance/noImgElement: use img instead of Image for responsive image */}
+                    <img className="mx-auto" src={imageSrc} alt={imageAlt} />
                 </div>
             </div>
 
