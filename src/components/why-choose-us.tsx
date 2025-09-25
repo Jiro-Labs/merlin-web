@@ -28,7 +28,12 @@ export const WhyChooseUs = ({
                     <img className="mx-auto" src="/reason.svg" alt="reason" />
                 </div>
             </div>
-            <img className="md:hidden w-full" src="/reason-mobile.svg" alt="reason" />
+            {/* biome-ignore lint/performance/noImgElement: use img instead of Image for responsive image */}
+            <img
+                className="md:hidden w-full"
+                src="/reason-mobile.svg"
+                alt="reason"
+            />
 
             <div className="my-8 md:my-16 text-center">
                 <p className="text-white font-bold text-2xl sm:text-3xl md:text-4xl">
