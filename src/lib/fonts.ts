@@ -1,13 +1,8 @@
-import localFont from "next/font/local";
+import { Be_Vietnam_Pro } from "next/font/google";
 
-export const purista = localFont({
-    src: [
-        {
-            path: "../../public/fonts/purista/PuristaTRIAL-Medium.woff2",
-            weight: "700",
-            style: "normal",
-        },
-    ],
-    variable: "--font-purista",
+export const beVietnamPro = Be_Vietnam_Pro({
+    subsets: ["latin", "vietnamese"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    variable: "--font-be-vietnam-pro",
     display: "swap",
 });

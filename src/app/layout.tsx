@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { purista } from "@/lib/fonts";
+import { beVietnamPro } from "@/lib/fonts";
 
 export const metadata: Metadata = {
     title: "Merlin Labs",
@@ -17,7 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${purista.variable} font-purista antialiased bg-black`}
+                className={` ${beVietnamPro.variable} font-be-vietnam-pro antialiased bg-black`}
             >
                 <Header />
                 {children}
