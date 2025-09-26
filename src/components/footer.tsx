@@ -213,7 +213,7 @@ export const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        www.MerlinLabs.co
+                        www.Merlin-Labs.co
                     </Link>
                 </div>
             </div>
