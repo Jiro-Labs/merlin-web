@@ -1,8 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "./ui/accordion";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const menus = {
     Menu: [
@@ -119,8 +124,8 @@ export const Footer = () => {
                             />
                             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                                 Merlin Labs is a full-stack Web3 growth labs
-                                providing end-to-end solutions for the blockchain
-                                ecosystem.
+                                providing end-to-end solutions for the
+                                blockchain ecosystem.
                             </p>
 
                             {/* Newsletter Signup */}
@@ -153,7 +158,10 @@ export const Footer = () => {
                             defaultValue="Menu"
                         >
                             <MobileNavigation title="Menu" items={menus.Menu} />
-                            <MobileNavigation title="Company" items={menus.Company} />
+                            <MobileNavigation
+                                title="Company"
+                                items={menus.Company}
+                            />
                         </Accordion>
                     </div>
 
@@ -177,7 +185,12 @@ export const Footer = () => {
                                 className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
                                 aria-label="Follow us on X (Twitter)"
                             >
-                                <Image src="/x.svg" alt="" height={24} width={24} />
+                                <Image
+                                    src="/x.svg"
+                                    alt=""
+                                    height={24}
+                                    width={24}
+                                />
                             </Link>
                             <Link
                                 href="#"
@@ -198,7 +211,9 @@ export const Footer = () => {
                 {/* Footer Bottom */}
                 <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-6">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-                        <p>Copyright © 2025 MerlinLabs. All rights reserved ®</p>
+                        <p>
+                            Copyright © 2025 MerlinLabs. All rights reserved ®
+                        </p>
                         <Link
                             href="https://www.MerlinLabs.co"
                             className="hover:text-white transition-colors"
