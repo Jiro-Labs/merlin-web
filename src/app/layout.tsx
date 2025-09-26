@@ -2,40 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { purista } from "@/lib/fonts";
-import { Geist, Geist_Mono } from "next/font/google";
+import { beVietnamPro } from "@/lib/fonts";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-    display: "swap",
-    fallback: [
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "sans-serif",
-    ],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-    display: "swap",
-    fallback: [
-        "SFMono-Regular",
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        "Liberation Mono",
-        "Courier New",
-        "monospace",
-    ],
-});
 export const metadata: Metadata = {
     title: "Merlin Labs",
-    description: "Merlin Labs Landing Page",
+    description: "Merlin Labs,
 };
 
 export default function RootLayout({
@@ -46,7 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${purista.variable} font-purista antialiased bg-black`}
+                className={` ${beVietnamPro.variable} font-be-vietnam-pro antialiased bg-black`}
             >
                 <Header />
                 {children}
