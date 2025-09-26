@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const menus = {
     Menu: [
@@ -72,6 +73,34 @@ const Navigation = ({
     );
 };
 
+const MobileNavigation = ({
+    title,
+    items,
+}: {
+    title: string;
+    items: { title: string; href: string }[];
+}) => {
+    return (
+        <AccordionItem value={title}>
+            <AccordionTrigger>{title}</AccordionTrigger>
+            <AccordionContent className="flex flex-col gap-4 text-balance">
+                <ul className="space-y-3">
+                    {items.map((item) => (
+                        <li key={item.title}>
+                            <Link
+                                href={item.href}
+                                className="text-gray-400 hover:text-white transition-colors text-sm"
+                            >
+                                {item.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </AccordionContent>
+        </AccordionItem>
+    );
+};
+
 export const Footer = () => {
     return (
         <footer className="text-white bg-black">
@@ -117,6 +146,15 @@ export const Footer = () => {
                             <Navigation title="Menu" items={menus.Menu} />
                             <Navigation title="Company" items={menus.Company} />
                         </div>
+                        <Accordion
+                            type="single"
+                            collapsible
+                            className="w-full"
+                            defaultValue="Menu"
+                        >
+                            <MobileNavigation title="Menu" items={menus.Menu} />
+                            <MobileNavigation title="Company" items={menus.Company} />
+                        </Accordion>
                     </div>
 
                     {/* Mobile Social Links */}
