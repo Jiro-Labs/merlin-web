@@ -113,7 +113,7 @@ export const Footer = () => {
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="grid grid-cols-2 gap-64">
+                        <div className="hidden sm:grid grid-cols-2 gap-64">
                             <Navigation title="Menu" items={menus.Menu} />
                             <Navigation title="Company" items={menus.Company} />
                         </div>
