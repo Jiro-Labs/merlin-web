@@ -214,7 +214,7 @@ export const Footer = () => {
                 <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-6">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                         <p>
-                            Copyright © 2025 MerlinLabs. All rights reserved ®
+                            Copyright © 2025 Merlin Labs. All rights reserved ®
                         </p>
                         <Link
                             href="https://www.merlin-labs.co"
