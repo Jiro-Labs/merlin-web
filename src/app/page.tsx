@@ -16,14 +16,17 @@ export default async function Home() {
             {/* Partners Section */}
             <Partners speed={1} />
 
-            <EventCarousel speed={2}>
-                <EventCard src="/event/1.jpg" alt="" />
-                <EventCard src="/event/2.jpg" alt="" />
-                <EventCard src="/event/3.jpg" alt="" />
-                <EventCard src="/event/4.jpg" alt="" />
-            </EventCarousel>
-
-            <AboutUs />
+            <AboutUs 
+                eventCarouselSpeed={2}
+                eventCarouselChildren={
+                    <>
+                        <EventCard src="/event/1.jpg" alt="" />
+                        <EventCard src="/event/2.jpg" alt="" />
+                        <EventCard src="/event/3.jpg" alt="" />
+                        <EventCard src="/event/4.jpg" alt="" />
+                    </>
+                }
+            />
 
             <OurServices />
 
