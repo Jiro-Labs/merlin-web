@@ -146,15 +146,17 @@ export const Footer = () => {
                             </div>
                         </div>
 
-                        {/* Navigation Links */}
-                        <div className="hidden sm:grid grid-cols-2 gap-64">
+                        {/* Navigation Links - Desktop & Tablet */}
+                        <div className="hidden md:grid grid-cols-2 gap-8 lg:gap-64">
                             <Navigation title="Menu" items={menus.Menu} />
                             <Navigation title="Company" items={menus.Company} />
                         </div>
+                        
+                        {/* Mobile Navigation - Mobile Only */}
                         <Accordion
                             type="single"
                             collapsible
-                            className="w-full"
+                            className="w-full md:hidden"
                             defaultValue="Menu"
                         >
                             <MobileNavigation title="Menu" items={menus.Menu} />
@@ -212,15 +214,15 @@ export const Footer = () => {
                 <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-6">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                         <p>
-                            Copyright © 2025 MerlinLabs. All rights reserved ®
+                            Copyright © 2025 Merlin Labs. All rights reserved ®
                         </p>
                         <Link
-                            href="https://www.MerlinLabs.co"
+                            href="https://www.merlin-labs.co"
                             className="hover:text-white transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            www.MerlinLabs.co
+                            www.Merlin-Labs.co
                         </Link>
                     </div>
                 </div>
