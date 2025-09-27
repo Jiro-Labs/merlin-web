@@ -208,7 +208,7 @@ export const Footer = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                     <p>Copyright © 2025 MerlinLabs. All rights reserved ®</p>
                     <Link
-                        href="https://www.MerlinLabs.co"
+                        href="https://www.merlin-labs.co"
                         className="hover:text-white transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
