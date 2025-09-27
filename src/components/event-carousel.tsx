@@ -39,6 +39,8 @@ export const EventCarousel = ({
             plugins={[
                 AutoScroll({
                     speed,
+                    stopOnInteraction: false,
+                    stopOnMouseEnter: false,
                 }),
             ]}
         >
