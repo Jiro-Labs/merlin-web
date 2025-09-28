@@ -23,10 +23,23 @@ export const WhyChooseUs = ({
     const [isWhyChooseUsVisible, setIsWhyChooseUsVisible] = useState(false);
     const [isCtaVisible, setIsCtaVisible] = useState(false);
     const whyChooseUsRef = useRef<HTMLDivElement>(null);
+    const whyChooseUsMobileRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const whyChooseUsObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsWhyChooseUsVisible(true);
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '-50px',
+            }
+        );
+
+        const whyChooseUsMobileObserver = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsWhyChooseUsVisible(true);
@@ -54,6 +67,10 @@ export const WhyChooseUs = ({
             whyChooseUsObserver.observe(whyChooseUsRef.current);
         }
 
+        if (whyChooseUsMobileRef.current) {
+            whyChooseUsMobileObserver.observe(whyChooseUsMobileRef.current);
+        }
+
         if (ctaRef.current) {
             ctaObserver.observe(ctaRef.current);
         }
@@ -61,6 +78,9 @@ export const WhyChooseUs = ({
         return () => {
             if (whyChooseUsRef.current) {
                 whyChooseUsObserver.unobserve(whyChooseUsRef.current);
+            }
+            if (whyChooseUsMobileRef.current) {
+                whyChooseUsMobileObserver.unobserve(whyChooseUsMobileRef.current);
             }
             if (ctaRef.current) {
                 ctaObserver.unobserve(ctaRef.current);
@@ -83,7 +103,7 @@ export const WhyChooseUs = ({
                 </div>
             </div>
             {/* biome-ignore lint/performance/noImgElement: use img instead of Image for responsive image */}
-            <div ref={whyChooseUsRef} className={`md:hidden transition-all duration-1000 ease-out ${
+            <div ref={whyChooseUsMobileRef} className={`md:hidden transition-all duration-1000 ease-out ${
                 isWhyChooseUsVisible 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
