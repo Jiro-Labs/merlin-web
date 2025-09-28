@@ -218,7 +218,7 @@ export const Footer = () => {
                         </div>
 
                         {/* Mobile Social Links */}
-                    <div className="mt-8 pt-8">
+                    <div className="hidden mt-8 pt-8">
                         <div className="flex justify-end space-x-6">
                             <Link
                                 href="#"
