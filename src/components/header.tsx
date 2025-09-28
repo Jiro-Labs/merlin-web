@@ -102,7 +102,7 @@ export const Header = () => {
                             src="/logo-mobile.svg"
                             alt="Merlin Labs - Web3 Solutions"
                             height={32}
-                            width={120}
+                            width={146}
                             priority
                         />
                         
