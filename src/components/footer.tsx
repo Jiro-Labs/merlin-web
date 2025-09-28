@@ -108,11 +108,61 @@ const MobileNavigation = ({
 
 export const Footer = () => {
     return (
-        <footer className="text-white bg-black">
-            <div className="max-w-7xl mx-auto">
-                {/* Main Footer Content */}
-                <div className="px-4 sm:px-6 md:px-8 lg:px-10 py-12 sm:py-16">
-                    <div className="flex flex-col md:flex-row justify-between gap-8 lg:gap-12">
+        <footer className="relative text-white xl:h-[566px]">
+            {/* Mobile Background (0-639px) */}
+            <Image
+                className="absolute inset-0 object-cover object-top transition-transform duration-1000 ease-out sm:hidden"
+                src="/footer-mobile-background.svg"
+                alt="Footer Background - Mobile"
+                fill
+                priority
+                sizes="100vw"
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center top'
+                }}
+            />
+
+            {/* Tablet Background (640px-1279px) */}
+            <Image
+                className="absolute inset-0 object-cover object-top transition-transform duration-1000 ease-out hidden sm:block xl:hidden"
+                src="/footer-tablet-background.svg"
+                alt="Footer Background - Tablet"
+                fill
+                priority
+                sizes="100vw"
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center top'
+                }}
+            />
+
+            {/* Desktop Background (1280px+) */}
+            <Image
+                className="absolute inset-0 object-cover object-top transition-transform duration-1000 ease-out hidden xl:block"
+                src="/footer-background.svg"
+                alt="Footer Background - Desktop"
+                fill
+                priority
+                sizes="100vw"
+                quality={95}
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center top'
+                }}
+            />
+            
+            {/* Overlay for better content readability */}
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Add 5% margin from left and right on desktop */}
+                <div className="xl:mx-[5%]">
+                    {/* Main Footer Content */}
+                    <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-0 py-12 sm:py-16">
+                        <div className="flex flex-col md:flex-row justify-between gap-8 lg:gap-12">
                         {/* Company Info & Newsletter */}
                         <div className="lg:col-span-1 space-y-6">
                             <Image
@@ -165,9 +215,9 @@ export const Footer = () => {
                                 items={menus.Company}
                             />
                         </Accordion>
-                    </div>
+                        </div>
 
-                    {/* Mobile Social Links */}
+                        {/* Mobile Social Links */}
                     <div className="mt-8 pt-8">
                         <div className="flex justify-end space-x-6">
                             <Link
@@ -211,19 +261,20 @@ export const Footer = () => {
                 </div>
 
                 {/* Footer Bottom */}
-                <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-6">
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-                        <p>
-                            Copyright © 2025 Merlin Labs. All rights reserved ®
-                        </p>
-                        <Link
-                            href="https://www.merlin-labs.co"
-                            className="hover:text-white transition-colors"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            www.Merlin-Labs.co
-                        </Link>
+                    <div className="border-t border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-0 py-6">
+                        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+                            <p>
+                                Copyright © 2025 Merlin Labs. All rights reserved ®
+                            </p>
+                            <Link
+                                href="https://www.merlin-labs.co"
+                                className="hover:text-white transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                www.Merlin-Labs.co
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
