@@ -28,6 +28,7 @@ const partnersData: PartnerData[] = [
         src: "/partner/okx.svg",
         alt: "OKX",
     },
+
     {
         id: "starknet",
         name: "STARKNET",
@@ -39,6 +40,13 @@ const partnersData: PartnerData[] = [
         name: "sei",
         src: "/partner/sei.svg",
         alt: "sei",
+    },
+    {
+        id: "oio-followin",
+        name: "OIO Followin",
+        src: "/partner/oio-followin.svg",
+        alt: "OIO Followin",
+        className: "h-16",
     },
     {
         id: "sui",
@@ -53,19 +61,13 @@ const partnersData: PartnerData[] = [
         alt: "ANOMALY",
     },
     {
-        id: "oio-followin",
-        name: "OIO Followin",
-        src: "/partner/oio-followin.svg",
-        alt: "OIO Followin",
-        className: "h-16",
-    },
-    {
         id: "dwf-labs",
         name: "DWF LABS",
         src: "/partner/dwf-labs.svg",
         alt: "DWF LABS",
         className: "h-16",
     },
+
 ];
 
 interface PartnersProps {
