@@ -83,15 +83,17 @@ export const WhyChooseUs = ({
                 </div>
             </div>
             {/* biome-ignore lint/performance/noImgElement: use img instead of Image for responsive image */}
-            <img
-                className={`md:hidden w-full transition-all duration-1000 ease-out ${
-                    isWhyChooseUsVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-8'
-                }`}
-                src="/reason-mobile.svg"
-                alt="reason"
-            />
+            <div ref={whyChooseUsRef} className={`md:hidden transition-all duration-1000 ease-out ${
+                isWhyChooseUsVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+            }`}>
+                <img
+                    className="w-full"
+                    src="/reason-mobile.svg"
+                    alt="reason"
+                />
+            </div>
 
             <div ref={ctaRef} className={`my-8 md:my-16 text-center transition-all duration-1000 ease-out ${
                 isCtaVisible 
