@@ -197,7 +197,7 @@ export const Footer = () => {
                         </div>
 
                         {/* Navigation Links - Desktop & Tablet */}
-                        <div className="hidden md:grid grid-cols-2 gap-8 lg:gap-64">
+                        <div className="hidden">
                             <Navigation title="Menu" items={menus.Menu} />
                             <Navigation title="Company" items={menus.Company} />
                         </div>
@@ -206,7 +206,7 @@ export const Footer = () => {
                         <Accordion
                             type="single"
                             collapsible
-                            className="w-full md:hidden"
+                            className="hidden"
                             defaultValue="Menu"
                         >
                             <MobileNavigation title="Menu" items={menus.Menu} />

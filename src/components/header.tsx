@@ -118,7 +118,7 @@ export const Header = () => {
                     </div>
 
                     {/* Desktop Navigation - Show on tablet and up */}
-                    <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+                    <nav className="hidden">
                         <NavigationMenu viewport={false}>
                             <NavigationMenuList className="flex items-center space-x-1">
                                 {navigationItems.map((item) => (
@@ -148,7 +148,7 @@ export const Header = () => {
                     </nav>
 
                     {/* Tablet Navigation - Show only on tablet */}
-                    <nav className="hidden md:flex lg:hidden flex-1 justify-center">
+                    <nav className="hidden">
                         <div className="flex items-center space-x-6">
                             {navigationItems.slice(0, 4).map((item) => (
                                 <a
@@ -166,7 +166,7 @@ export const Header = () => {
                     </nav>
 
                     {/* Desktop & Tablet CTA Button */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden">
                         <Button
                             className="
                                 px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
@@ -186,11 +186,7 @@ export const Header = () => {
                     <Button
                         variant="ghost"
                         size="sm"
-                        className={`
-                            md:hidden p-2 rounded-lg transition-all duration-200
-                            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                            ${isMobileMenuOpen ? "bg-gray-100" : ""}
-                        `}
+                        className="hidden"
                         onClick={toggleMobileMenu}
                         aria-label="Toggle navigation menu"
                         aria-expanded={isMobileMenuOpen}
@@ -224,16 +220,7 @@ export const Header = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div
-                className={`
-                md:hidden fixed inset-0 top-14 sm:top-16 z-40 transition-all duration-300 ease-in-out
-                ${
-                    isMobileMenuOpen
-                        ? "opacity-100 visible"
-                        : "opacity-0 invisible"
-                }
-            `}
-            >
+            <div className="hidden">
                 {/* Mobile Navigation Panel */}
                 <nav
                     className={`

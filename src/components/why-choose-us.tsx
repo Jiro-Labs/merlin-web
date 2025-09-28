@@ -126,7 +126,7 @@ export const WhyChooseUs = ({
                 <p className="my-4 md:my-8 text-gray-500 text-lg sm:text-xl">
                     {ctaSubtitle}
                 </p>
-                <Link href="mailto:contact@merlin-labs.co">
+                <Link href="https://t.me/bebunangqua" target="_blank" rel="noopener noreferrer">
                     <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
                         <p>{ctaButtonText}</p>
                         <ChevronRight />

@@ -150,7 +150,7 @@ export const OurServices = ({
                         <p className="my-4 sm:my-5 text-sm sm:text-base xl:text-base text-gray-500 leading-relaxed">
                             {description}
                         </p>
-                        <Button className="!p-4 sm:!p-5 bg-gray-500 hover:bg-violet-700 rounded-full">
+                        <Button className="hidden !p-4 sm:!p-5 bg-gray-500 hover:bg-violet-700 rounded-full">
                             <p className="text-sm sm:text-base">{buttonText}</p>
                             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                         </Button>

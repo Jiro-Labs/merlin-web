@@ -41,8 +41,8 @@ export const FeatureCard = ({
             </CardTitle>
             <CardContent>{children}</CardContent>
             <CardFooter className="mt-10 flex gap-5 justify-start items-center transition-all duration-300">
-                <p className="font-bold text-lg">Know More</p>
-                <ArrowUpRight className="text-violet-400 transition-all duration-300 group-hover:text-violet-300" />
+                <p className="hidden font-bold text-lg">Know More</p>
+                <ArrowUpRight className=" hidden text-violet-400 transition-all duration-300 group-hover:text-violet-300" />
             </CardFooter>
         </Card>
     );
