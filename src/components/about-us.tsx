@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { EventCarousel } from "./event-carousel";
 
 interface AboutUsProps {
@@ -16,6 +19,32 @@ export const AboutUs = ({
     eventCarouselSpeed = 2,
     eventCarouselChildren,
 }: AboutUsProps) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const aboutUsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '-50px',
+            }
+        );
+
+        if (aboutUsRef.current) {
+            observer.observe(aboutUsRef.current);
+        }
+
+        return () => {
+            if (aboutUsRef.current) {
+                observer.unobserve(aboutUsRef.current);
+            }
+        };
+    }, []);
     return (
         <div className="relative xl:min-h-[120vh] xl:overflow-visible">
             {/* Mobile Background (0-639px) */}
@@ -76,12 +105,16 @@ export const AboutUs = ({
                 )}
 
                 {/* About Us Section */}
-                <div className="px-4 sm:px-6 lg:px-10 py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-10">
+                <div ref={aboutUsRef} className="px-4 sm:px-6 lg:px-10 py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-10">
                     {/* Add 5% margin from left and right */}
                     <div className="mx-[5%]">
                         <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 lg:gap-16 xl:gap-20">
                             {/* About Us Image Section - Left side on tablet and desktop */}
-                            <div className="w-full md:w-1/2 flex justify-start">
+                            <div className={`w-full md:w-1/2 flex justify-start transition-all duration-1000 ease-out ${
+                                isVisible 
+                                    ? 'opacity-100 translate-y-0' 
+                                    : 'opacity-0 translate-y-8'
+                            }`}>
                                 <div className="relative w-[100%] md:w-full max-w-md md:max-w-full">
                                     <Image
                                         className="object-contain w-full h-auto"
@@ -96,7 +129,11 @@ export const AboutUs = ({
                             </div>
 
                             {/* Text Content Section - Right side on tablet and desktop */}
-                            <div className="w-full md:w-1/2 text-white text-left md:pt-4 lg:pt-8 xl:pt-12">
+                            <div className={`w-full md:w-1/2 text-white text-left md:pt-4 lg:pt-8 xl:pt-12 transition-all duration-1000 ease-out ${
+                                isVisible 
+                                    ? 'opacity-100 translate-y-0' 
+                                    : 'opacity-0 translate-y-8'
+                            }`} style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}>
                                 <p className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold">
                                     {title}
                                 </p>

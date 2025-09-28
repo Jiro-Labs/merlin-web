@@ -1,4 +1,7 @@
+"use client";
+
 import { ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { FeatureCard, FeatureCardTitle } from "@/components/feature-card";
 import { Button } from "@/components/ui/button";
 
@@ -15,13 +18,43 @@ export const OurServices = ({
     description = "We deliver solutions to empower your business to grow securely and efficiently. Our solutions are designed to help you achieve results through advanced technology and hands-on guidance.",
     buttonText = "All Services",
 }: OurServicesProps) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const servicesRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '-50px',
+            }
+        );
+
+        if (servicesRef.current) {
+            observer.observe(servicesRef.current);
+        }
+
+        return () => {
+            if (servicesRef.current) {
+                observer.unobserve(servicesRef.current);
+            }
+        };
+    }, []);
     return (
-        <div className="px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20">
+        <div ref={servicesRef} className="px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20">
             {/* Add 5% margin from left and right to match About Us */}
             <div className="mx-[5%]">
                 <div className="flex flex-col xl:flex-row xl:justify-between gap-8 xl:gap-12">
                     {/* Services Grid */}
-                    <div className="w-full xl:flex-1">
+                    <div className={`w-full xl:flex-1 transition-all duration-1000 ease-out ${
+                        isVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-8'
+                    }`}>
                         {/* Mobile: Single column, Tablet: 2 columns full width, Desktop: 2 columns with staggered layout */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 place-items-start md:place-items-stretch">
                             {/* Column 1 - Tablet: Lower, Desktop: Higher */}
@@ -103,7 +136,11 @@ export const OurServices = ({
                     </div>
 
                     {/* Text Content Section */}
-                    <div className="w-full xl:max-w-md 2xl:max-w-lg xl:mt-60 text-white text-left">
+                    <div className={`w-full xl:max-w-md 2xl:max-w-lg xl:mt-60 text-white text-left transition-all duration-1000 ease-out ${
+                        isVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-8'
+                    }`} style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}>
                         <p className="text-xl sm:text-2xl xl:text-2xl font-bold">
                             {title}
                         </p>
