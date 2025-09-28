@@ -17,10 +17,10 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
                 />
                 {/* Purple gradient overlay from bottom */}
                 <div
-                    className="h-2/5 sm:h-2/5 md:h-1/3 absolute inset-0 top-auto bottom-3 md:bottom-4 lg:bottom-5 bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none"
+                    className="h-2/5 sm:h-2/5 md:h-1/3 absolute inset-0 top-auto bottom-4 md:bottom-4 lg:bottom-5 bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none"
                     style={{
                         background:
-                            "linear-gradient(0.45deg, rgba(62,12,158,0.9) -20%, rgba(69,23,200,0.25), rgba(100,100,100,0) 70%)",
+                            "linear-gradient(0.45deg, #231154 -20%, rgba(69,23,200,0.25), rgba(100,100,100,0) 70%)",
                     }}
                 />
             </div>
