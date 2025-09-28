@@ -56,7 +56,7 @@ export const Hero = ({
                 fill
                 priority
                 sizes="100vw"
-                quality={95}
+                quality={100}
                 style={{
                     objectFit: 'cover',
                     objectPosition: 'center center'
@@ -71,7 +71,7 @@ export const Hero = ({
                 fill
                 priority
                 sizes="100vw"
-                quality={95}
+                quality={100}
                 style={{
                     objectFit: 'cover',
                     objectPosition: 'center center'
@@ -86,7 +86,7 @@ export const Hero = ({
                 fill
                 priority
                 sizes="100vw"
-                quality={95}
+                quality={100}
                 style={{
                     objectFit: 'cover',
                     objectPosition: 'center center'
@@ -94,7 +94,7 @@ export const Hero = ({
             />
 
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-[0.5px]" />
+            <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px]" />
         </section>
     );
 };
