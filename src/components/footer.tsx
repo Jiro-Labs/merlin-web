@@ -154,7 +154,7 @@ export const Footer = () => {
                         <Accordion
                             type="single"
                             collapsible
-                            className="w-full"
+                            className="w-full block sm:hidden"
                             defaultValue="Menu"
                         >
                             <MobileNavigation title="Menu" items={menus.Menu} />
