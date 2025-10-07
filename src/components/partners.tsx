@@ -19,15 +19,16 @@ const partnersData: PartnerData[] = [
     {
         id: "bingx",
         name: "BingX",
-        src: "/partner/bingx.png",
+        src: "/partner/bingx.svg",
         alt: "BingX",
     },
     {
         id: "okx",
         name: "OKX",
-        src: "/partner/okx.png",
+        src: "/partner/okx.svg",
         alt: "OKX",
     },
+
     {
         id: "starknet",
         name: "STARKNET",
@@ -37,13 +38,20 @@ const partnersData: PartnerData[] = [
     {
         id: "sei",
         name: "sei",
-        src: "/partner/sei.png",
+        src: "/partner/sei.svg",
         alt: "sei",
+    },
+    {
+        id: "oio-followin",
+        name: "OIO Followin",
+        src: "/partner/oio-followin.svg",
+        alt: "OIO Followin",
+        className: "h-16",
     },
     {
         id: "sui",
         name: "Sui",
-        src: "/partner/sui.png",
+        src: "/partner/sui.svg",
         alt: "Sui",
     },
     {
@@ -53,16 +61,9 @@ const partnersData: PartnerData[] = [
         alt: "ANOMALY",
     },
     {
-        id: "oio-followin",
-        name: "OIO Followin",
-        src: "/partner/oio-followin.png",
-        alt: "OIO Followin",
-        className: "h-16",
-    },
-    {
         id: "dwf-labs",
         name: "DWF LABS",
-        src: "/partner/dwf-labs.png",
+        src: "/partner/dwf-labs.svg",
         alt: "DWF LABS",
         className: "h-16",
     },
@@ -80,7 +81,7 @@ export const Partners = ({
     partners = partnersData,
 }: PartnersProps) => {
     return (
-        <section className="py-2">
+        <section className="py-1" style={{ backgroundColor: "#121212" }}>
             {/* Partner Carousel */}
             <PartnerCarousel speed={speed}>
                 {partners.map((partner) => (

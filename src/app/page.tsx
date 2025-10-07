@@ -1,7 +1,7 @@
 "use server";
 
 import { AboutUs } from "@/components/about-us";
-import { EventCard, EventCarousel } from "@/components/event-carousel";
+import { EventCard } from "@/components/event-carousel";
 import { Hero } from "@/components/hero";
 import { OurServices } from "@/components/our-services";
 import { Partners } from "@/components/partners";
@@ -16,14 +16,19 @@ export default async function Home() {
             {/* Partners Section */}
             <Partners speed={1} />
 
-            <EventCarousel speed={2}>
-                <EventCard src="/event/1.jpg" alt="" />
-                <EventCard src="/event/2.jpg" alt="" />
-                <EventCard src="/event/3.jpg" alt="" />
-                <EventCard src="/event/4.jpg" alt="" />
-            </EventCarousel>
-
-            <AboutUs />
+            <AboutUs
+                eventCarouselSpeed={2}
+                eventCarouselChildren={
+                    <>
+                        <EventCard src="/event/1.svg" alt="" />
+                        <EventCard src="/event/2.svg" alt="" />
+                        <EventCard src="/event/3.svg" alt="" />
+                        <EventCard src="/event/4.svg" alt="" />
+                        <EventCard src="/event/5.svg" alt="" />
+                        <EventCard src="/event/6.svg" alt="" />
+                    </>
+                }
+            />
 
             <OurServices />
 

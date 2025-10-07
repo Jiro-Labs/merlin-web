@@ -22,9 +22,14 @@ export const FeatureCard = ({
 }: PropsWithChildren<Props>) => {
     return (
         <Card
-            className={cn("w-xs bg-zinc-900 border-none text-white", className)}
+            className={cn(
+                "w-xs bg-zinc-900 border-none text-white transition-all duration-300 ease-out cursor-pointer",
+                "hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-500/20",
+                "hover:bg-zinc-800 hover:scale-[1.02]",
+                className,
+            )}
         >
-            <CardTitle className="mx-auto md:ml-5 md:mr-0 w-fit p-3 bg-linear-to-t from-violet-900 to-violet-600">
+            <CardTitle className="ml-5 mr-0 w-fit p-3 bg-linear-to-t from-violet-900 to-violet-600 transition-all duration-300">
                 <div className="relative size-8">
                     <Image
                         className="object-contain"
@@ -35,9 +40,9 @@ export const FeatureCard = ({
                 </div>
             </CardTitle>
             <CardContent>{children}</CardContent>
-            <CardFooter className="mt-10 flex gap-5 justify-center md:justify-start items-center">
-                <p className="font-bold text-lg">Know More</p>
-                <ArrowUpRight className="text-violet-400" />
+            <CardFooter className="mt-10 flex gap-5 justify-start items-center transition-all duration-300">
+                <p className="hidden font-bold text-lg">Know More</p>
+                <ArrowUpRight className=" hidden text-violet-400 transition-all duration-300 group-hover:text-violet-300" />
             </CardFooter>
         </Card>
     );

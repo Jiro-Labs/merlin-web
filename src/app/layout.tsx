@@ -6,7 +6,7 @@ import { beVietnamPro } from "@/lib/fonts";
 
 export const metadata: Metadata = {
     title: "Merlin Labs",
-    description: "Merlin Labs Landing Page",
+    description: "Merlin Labs",
 };
 
 export default function RootLayout({
