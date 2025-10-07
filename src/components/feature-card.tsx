@@ -26,7 +26,7 @@ export const FeatureCard = ({
                 "w-xs bg-zinc-900 border-none text-white transition-all duration-300 ease-out cursor-pointer",
                 "hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-500/20",
                 "hover:bg-zinc-800 hover:scale-[1.02]",
-                className
+                className,
             )}
         >
             <CardTitle className="ml-5 mr-0 w-fit p-3 bg-linear-to-t from-violet-900 to-violet-600 transition-all duration-300">

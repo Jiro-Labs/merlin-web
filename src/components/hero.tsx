@@ -15,7 +15,7 @@ export const Hero = ({
     title = "MERLIN LABS",
     subtitle = "Consulting | Marketing | Solution",
     mobileBackground = "/introduction-background-mobile.svg",
-    tabletBackground = "/introduction-background-tablet.svg", 
+    tabletBackground = "/introduction-background-tablet.svg",
     desktopBackground = "/introduction-background.svg",
 }: HeroProps) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -32,18 +32,23 @@ export const Hero = ({
         <section className="flex h-[320px] sm:h-[537px] xl:min-h-[100dvh] flex-col items-center justify-center text-white relative overflow-hidden">
             {/* Hero Content */}
             <div className="z-20 text-center space-y-3 sm:space-y-4 md:space-y-5 px-4 max-w-4xl mx-auto">
-                <h1 className={`font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight transition-all duration-1000 ease-out ${
-                    isVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-8'
-                }`}>
+                <h1
+                    className={`font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight transition-all duration-1000 ease-out ${
+                        isVisible
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-8"
+                    }`}
+                >
                     {title}
                 </h1>
-                <p className={`text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
-                    isVisible 
-                        ? 'opacity-90 translate-y-0' 
-                        : 'opacity-0 translate-y-8'
-                }`} style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}>
+                <p
+                    className={`text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
+                        isVisible
+                            ? "opacity-90 translate-y-0"
+                            : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
+                >
                     {subtitle}
                 </p>
             </div>
@@ -58,8 +63,8 @@ export const Hero = ({
                 sizes="100vw"
                 quality={100}
                 style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center center'
+                    objectFit: "cover",
+                    objectPosition: "center center",
                 }}
             />
 
@@ -73,8 +78,8 @@ export const Hero = ({
                 sizes="100vw"
                 quality={100}
                 style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center center'
+                    objectFit: "cover",
+                    objectPosition: "center center",
                 }}
             />
 
@@ -88,8 +93,8 @@ export const Hero = ({
                 sizes="100vw"
                 quality={100}
                 style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center center'
+                    objectFit: "cover",
+                    objectPosition: "center center",
                 }}
             />
 

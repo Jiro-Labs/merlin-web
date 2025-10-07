@@ -105,7 +105,7 @@ export const Header = () => {
                             width={146}
                             priority
                         />
-                        
+
                         {/* Desktop & Tablet Logo (768px+) */}
                         <Image
                             className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"

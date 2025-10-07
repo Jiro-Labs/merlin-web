@@ -1,7 +1,7 @@
 "use server";
 
 import { AboutUs } from "@/components/about-us";
-import { EventCard, EventCarousel } from "@/components/event-carousel";
+import { EventCard } from "@/components/event-carousel";
 import { Hero } from "@/components/hero";
 import { OurServices } from "@/components/our-services";
 import { Partners } from "@/components/partners";
@@ -16,7 +16,7 @@ export default async function Home() {
             {/* Partners Section */}
             <Partners speed={1} />
 
-            <AboutUs 
+            <AboutUs
                 eventCarouselSpeed={2}
                 eventCarouselChildren={
                     <>

@@ -67,7 +67,6 @@ const partnersData: PartnerData[] = [
         alt: "DWF LABS",
         className: "h-16",
     },
-
 ];
 
 interface PartnersProps {
@@ -82,10 +81,7 @@ export const Partners = ({
     partners = partnersData,
 }: PartnersProps) => {
     return (
-        <section 
-            className="py-1"
-            style={{ backgroundColor: '#121212' }}
-        >
+        <section className="py-1" style={{ backgroundColor: "#121212" }}>
             {/* Partner Carousel */}
             <PartnerCarousel speed={speed}>
                 {partners.map((partner) => (
