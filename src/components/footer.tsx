@@ -196,14 +196,24 @@ export const Footer = () => {
                                 </div>
                             </div>
 
-                            {/* Navigation Links - Desktop & Tablet */}
-                            <div className="hidden">
-                                <Navigation title="Menu" items={menus.Menu} />
-                                <Navigation
-                                    title="Company"
-                                    items={menus.Company}
-                                />
-                            </div>
+                        {/* Navigation Links */}
+                        <div className="hidden sm:grid grid-cols-2 gap-64">
+                            <Navigation title="Menu" items={menus.Menu} />
+                            <Navigation title="Company" items={menus.Company} />
+                        </div>
+                        <Accordion
+                            type="single"
+                            collapsible
+                            className="w-full block sm:hidden"
+                            defaultValue="Menu"
+                        >
+                            <MobileNavigation title="Menu" items={menus.Menu} />
+                            <MobileNavigation
+                                title="Company"
+                                items={menus.Company}
+                            />
+                        </Accordion>
+                    </div>
 
                             {/* Mobile Navigation - Mobile Only */}
                             <Accordion
