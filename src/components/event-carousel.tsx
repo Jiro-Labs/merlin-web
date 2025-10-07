@@ -10,17 +10,17 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
         <CarouselItem className="pl-2 sm:pl-3 md:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
             <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden group">
                 <Image
-                    className="object-cover w-full h-full filter grayscale brightness-75 transition-all duration-300"
+                    className="object-cover filter grayscale brightness-75 transition-all duration-300"
                     src={src}
                     alt={alt}
                     fill
                 />
                 {/* Purple gradient overlay from bottom */}
                 <div
-                    className="h-2/5 absolute inset-0 top-auto bg-gradient-to-t from-purple-600/70 via-purple-500/30 to-transparent opacity-80 pointer-events-none"
+                    className="absolute left-0 right-0 bottom-0 h-2/5 z-10 pointer-events-none rounded-b-lg"
                     style={{
                         background:
-                            "linear-gradient(0.45deg, rgba(62,12,158,0.9) -20%, rgba(69,23,200,0.25), rgba(100,100,100,0) 70%)",
+                            "linear-gradient(0.45deg, rgba(62,12,158,0.9) -20%, rgba(69,23,200,0.25), rgba(100,100,100,0) 100%)",
                     }}
                 />
             </div>
