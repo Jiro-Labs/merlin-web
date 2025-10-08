@@ -8,7 +8,7 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
     return (
         <CarouselItem className="pl-2 sm:pl-3 md:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
-            <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden group">
+            <div className="isolate w-full aspect-[4/3] relative rounded-lg overflow-hidden group">
                 <Image
                     className="object-cover filter grayscale brightness-75 transition-all duration-300"
                     src={src}
@@ -17,10 +17,10 @@ export const EventCard = ({ src, alt }: { src: string; alt: string }) => {
                 />
                 {/* Purple gradient overlay from bottom */}
                 <div
-                    className="absolute left-0 right-0 bottom-0 h-2/5 z-10 pointer-events-none rounded-b-lg"
+                    className="rotate-180 h-full absolute inset-0 pointer-events-none z-10 mix-blend-multiply"
                     style={{
                         background:
-                            "linear-gradient(0.45deg, rgba(62,12,158,0.9) -20%, rgba(69,23,200,0.25), rgba(100,100,100,0) 100%)",
+                            "linear-gradient(180.45deg, rgba(62, 12, 158, 0.8) -19.95%, rgba(69, 23, 177, 0.65) 15.71%, rgba(255, 255, 255, 0) 105.69%)",
                     }}
                 />
             </div>
