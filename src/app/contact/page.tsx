@@ -5,16 +5,18 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
     return (
-        <div>
-            <div>
-                <h1>
-                    Get in touch with us!
-                </h1>
-                <h2>
-                    If You Have Any Ideas, Please Fill Out The Form Below And Our Consultants Will Get In Touch With You Shortly.
-                </h2>
+        <div className="pt-14 sm:pt-16 md:pt-18 lg:pt-20" >
+            <div className="mx-5">
+                <div className="space-y-5 max-w-4xl mx-auto my-40 text-white text-center">
+                    <p className="text-5xl bold">
+                        Get in touch with us!
+                    </p>
+                    <p className="text-xl">
+                        If You Have Any Ideas, Please Fill Out The Form Below And Our Consultants Will Get In Touch With You Shortly.
+                    </p>
+                </div>
             </div>
-            <div className="my-10 px-5 space-y-5">
+            <div className="text-white max-w-2xl mx-auto my-10 px-5 space-y-5">
                 <Input className="p-5 focus:border-violet-600 border-gray-500 hover:border-violet-600"
                     placeholder="Your name"
                 />
