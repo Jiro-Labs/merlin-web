@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="pt-14 sm:pt-16 md:pt-18 lg:pt-20">
             <div className="mx-5">
                 <div className="space-y-5 max-w-4xl mx-auto my-40 text-white text-center">
-                    <p className="text-5xl bold">Get in touch with us!</p>
+                    <p className="text-5xl font-extrabold">Get in touch with us!</p>
                     <p className="text-xl">
                         If You Have Any Ideas, Please Fill Out The Form Below
                         And Our Consultants Will Get In Touch With You Shortly.
