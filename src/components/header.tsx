@@ -1,110 +1,71 @@
 "use client";
 
-import { ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import {
-    NavigationMenu,
-    NavigationMenuLink,
-    NavigationMenuList,
-} from "./ui/navigation-menu";
+import { ChevronRight, Menu, X } from "lucide-react";
 
 const navigationItems = [
-    {
-        title: "HOME",
-        href: "#home",
-    },
-    {
-        title: "ABOUT",
-        href: "#about",
-    },
-    {
-        title: "RESOURCES",
-        href: "#resources",
-    },
-    {
-        title: "CONTACT",
-        href: "#contact",
-    },
-    {
-        title: "LOGIN",
-        href: "#login",
-    },
+    { title: "HOME", href: "/" },
+    { title: "ABOUT", href: "/about" },
+    { title: "CONTACT", href: "/contact" },
 ] as const;
 
 export const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Handle scroll effect
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-
+        const handleScroll = () => setIsScrolled(window.scrollY > 10);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Handle mobile menu close on resize
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 768) {
-                setIsMobileMenuOpen(false);
-            }
+            if (window.innerWidth >= 768) setIsMobileMenuOpen(false);
         };
-
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Prevent body scroll when mobile menu is open
     useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-
+        document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
         return () => {
             document.body.style.overflow = "unset";
         };
     }, [isMobileMenuOpen]);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
-
-    const handleNavClick = () => {
-        setIsMobileMenuOpen(false);
-    };
+    const toggleMobileMenu = () => setIsMobileMenuOpen((s) => !s);
+    const handleNavClick = () => setIsMobileMenuOpen(false);
 
     return (
         <header
             className={`
-                fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
-                md:text-white text-black
-                ${
-                    isScrolled
-                        ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
-                        : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
-                }
-            `}
+        fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
+        md:text-white text-black
+        ${
+            isScrolled
+                ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
+                : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
+        }
+      `}
         >
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
+                <div className="flex items-center justify-between h-14 sm:h-16 md:h-16 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 z-50">
-                        {/* Mobile Logo (0-767px) */}
-                        <Image
-                            className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
-                            src="/logo-mobile.svg"
-                            alt="Merlin Labs - Web3 Solutions"
-                            height={32}
-                            width={146}
-                            priority
-                        />
+                        {/* Mobile Logo: hide when mobile menu is open to avoid duplicate */}
+                        {!isMobileMenuOpen && (
+                            <Image
+                                className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
+                                src="/logo-mobile.svg"
+                                alt="Merlin Labs - Web3 Solutions"
+                                height={32}
+                                width={146}
+                                priority
+                            />
+                        )}
 
                         {/* Desktop & Tablet Logo (768px+) */}
                         <Image
@@ -117,65 +78,36 @@ export const Header = () => {
                         />
                     </div>
 
-                    {/* Desktop Navigation - Show on tablet and up */}
-                    <nav className="hidden">
-                        <NavigationMenu viewport={false}>
-                            <NavigationMenuList className="flex items-center space-x-1">
-                                {navigationItems.map((item) => (
-                                    <NavigationMenuLink
-                                        key={item.title}
-                                        href={item.href}
-                                        className="
-                                            relative px-4 py-2 text-sm font-medium rounded-lg
-                                            transition-all duration-200 ease-in-out
-                                            hover:bg-white/10 hover:text-white
-                                            focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                                            group
-                                        "
-                                    >
-                                        {item.title}
-                                        <span
-                                            className="
-                                            absolute bottom-0 left-1/2 w-0 h-0.5 bg-violet-500
-                                            transition-all duration-200 ease-in-out
-                                            group-hover:w-full group-hover:left-0
-                                        "
-                                        />
-                                    </NavigationMenuLink>
-                                ))}
-                            </NavigationMenuList>
-                        </NavigationMenu>
+                    {/* Desktop Navigation (md and up) */}
+                    <nav className="hidden md:flex items-center space-x-6">
+                        {navigationItems.slice(0, 4).map((item) => (
+                            <a
+                                key={item.title}
+                                href={item.href}
+                                onClick={handleNavClick}
+                                className="
+                  relative px-3 py-2 text-sm font-medium rounded-md
+                  transition-all duration-200 ease-in-out
+                  hover:bg-white/10 hover:text-white
+                  focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                "
+                            >
+                                {item.title}
+                            </a>
+                        ))}
                     </nav>
 
-                    {/* Tablet Navigation - Show only on tablet */}
-                    <nav className="hidden">
-                        <div className="flex items-center space-x-6">
-                            {navigationItems.slice(0, 4).map((item) => (
-                                <a
-                                    key={item.title}
-                                    href={item.href}
-                                    className="
-                                        text-sm font-medium transition-colors duration-200 text-white
-                                        hover:text-violet-300 focus:outline-none focus:text-violet-300
-                                    "
-                                >
-                                    {item.title}
-                                </a>
-                            ))}
-                        </div>
-                    </nav>
-
-                    {/* Desktop & Tablet CTA Button */}
-                    <div className="hidden">
+                    {/* Desktop CTA */}
+                    <div className="hidden md:block">
                         <Button
                             className="
-                                px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
-                                hover:from-violet-600 hover:to-purple-700 
-                                rounded-full transition-all duration-300 ease-in-out
-                                transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25
-                                focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                                text-sm font-medium
-                            "
+                px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
+                hover:from-violet-600 hover:to-purple-700 
+                rounded-full transition-all duration-300 ease-in-out
+                transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25
+                focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                text-sm font-medium
+              "
                         >
                             <span>GET STARTED</span>
                             <ChevronRight size={16} className="ml-1" />
@@ -186,7 +118,7 @@ export const Header = () => {
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="hidden"
+                        className="md:hidden"
                         onClick={toggleMobileMenu}
                         aria-label="Toggle navigation menu"
                         aria-expanded={isMobileMenuOpen}
@@ -195,113 +127,118 @@ export const Header = () => {
                             <Menu
                                 size={24}
                                 className={`
-                                    absolute inset-1 transition-all duration-300 transform text-black
-                                    ${
-                                        isMobileMenuOpen
-                                            ? "rotate-180 opacity-0 scale-0"
-                                            : "rotate-0 opacity-100 scale-100"
-                                    }
-                                `}
+                  absolute inset-0 transition-all duration-200 transform
+                  ${isMobileMenuOpen ? "opacity-0 scale-75 -rotate-12" : "opacity-100 scale-100 rotate-0"}
+                `}
                             />
                             <X
                                 size={24}
                                 className={`
-                                    absolute inset-1 transition-all duration-300 transform text-black
-                                    ${
-                                        isMobileMenuOpen
-                                            ? "rotate-0 opacity-100 scale-100"
-                                            : "rotate-180 opacity-0 scale-0"
-                                    }
-                                `}
+                  absolute inset-0 transition-all duration-200 transform
+                  ${isMobileMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-12"}
+                `}
                             />
                         </div>
                     </Button>
                 </div>
             </div>
 
-            {/* Mobile Menu Overlay */}
-            <div className="hidden">
-                {/* Mobile Navigation Panel */}
+            {/* Mobile menu overlay */}
+            <div
+                className={`
+          fixed inset-0 z-40 md:hidden pointer-events-auto
+          transition-all duration-300 ease-in-out
+          ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+        `}
+                aria-hidden={!isMobileMenuOpen}
+            >
+                <div
+                    className={`
+            absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300
+            ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
+          `}
+                    onClick={toggleMobileMenu}
+                />
+
                 <nav
                     className={`
-                    relative bg-black/95 backdrop-blur-xl border-t border-white/10
-                    shadow-2xl shadow-black/50 transition-all duration-300 ease-in-out
-                    min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
-                    ${
-                        isMobileMenuOpen
-                            ? "translate-y-0 opacity-100"
-                            : "-translate-y-4 opacity-0"
-                    }
-                `}
+            absolute top-0 left-0 right-0 bg-black/95 text-white
+            min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
+            px-4 pt-6 pb-8 overflow-y-auto
+            transform transition-transform duration-300
+            ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-6"}
+          `}
+                    role="dialog"
+                    aria-modal="true"
                 >
-                    <div className="px-4 py-6 space-y-1 max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto">
+                    <div className="flex items-center justify-between mb-4">
+                        {/* Keep the panel logo */}
+                        <Image
+                            src="/logo-mobile.svg"
+                            alt="logo"
+                            width={140}
+                            height={28}
+                            className="h-7 w-auto"
+                        />
+                        <Button
+                            variant="ghost"
+                            onClick={toggleMobileMenu}
+                            aria-label="Close menu"
+                        >
+                            <X size={20} />
+                        </Button>
+                    </div>
+
+                    <div className="space-y-1">
                         {navigationItems.map((item, index) => (
                             <a
                                 key={item.title}
                                 href={item.href}
-                                className={`
-                                    block px-3 py-3 text-base font-medium rounded-lg text-white
-                                    transition-all duration-200 ease-in-out
-                                    hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-purple-500/20
-                                    hover:text-white hover:shadow-lg hover:shadow-violet-500/10
-                                    focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                                    border border-transparent hover:border-violet-500/30
-                                    transform hover:translate-x-1 active:scale-95
-                                    ${
-                                        isMobileMenuOpen
-                                            ? `animate-fade-in-up`
-                                            : ""
-                                    }
-                                `}
-                                style={{
-                                    animationDelay: `${index * 80}ms`,
-                                }}
                                 onClick={handleNavClick}
+                                className={`
+                  block px-3 py-3 text-base font-medium rounded-lg text-white
+                  transition-all duration-200 ease-in-out
+                  hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-purple-500/20
+                  focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                  transform active:scale-95
+                `}
+                                style={{ transitionDelay: `${index * 50}ms` }}
                             >
                                 <div className="flex items-center justify-between">
                                     <span>{item.title}</span>
                                     <ChevronRight
                                         size={16}
-                                        className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 text-white"
+                                        className="text-white opacity-70"
                                     />
                                 </div>
                             </a>
                         ))}
+                    </div>
 
-                        {/* Mobile CTA Section */}
-                        <div
-                            className={`
-                            pt-4 mt-4 border-t border-white/10
-                            ${isMobileMenuOpen ? "animate-fade-in-up" : ""}
-                        `}
-                            style={{
-                                animationDelay: "400ms",
-                            }}
+                    <div className="pt-6 mt-6 border-t border-white/10">
+                        <Button
+                            className="
+                w-full px-4 py-3 bg-gradient-to-r from-violet-500 to-purple-600
+                hover:from-violet-600 hover:to-purple-700 
+                rounded-lg transition-all duration-300 ease-in-out
+                transform hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/25
+                active:scale-95
+                focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                text-sm font-semibold
+              "
+                            onClick={handleNavClick}
                         >
-                            <Button
-                                className="
-                                w-full px-4 py-3 bg-gradient-to-r from-violet-500 to-purple-600
-                                hover:from-violet-600 hover:to-purple-700 
-                                rounded-lg transition-all duration-300 ease-in-out
-                                transform hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/25
-                                active:scale-95
-                                focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                                text-sm font-semibold
-                            "
-                            >
-                                <span>GET STARTED</span>
-                                <ChevronRight size={16} className="ml-2" />
-                            </Button>
+                            <span>GET STARTED</span>
+                            <ChevronRight size={16} className="ml-2" />
+                        </Button>
 
-                            {/* Contact Info */}
-                            <div className="mt-4 text-center">
-                                <p className="text-gray-400 text-xs">
-                                    Ready to transform your vision?
-                                </p>
-                                <p className="text-violet-300 text-xs font-medium mt-1">
-                                    Let's innovate together
-                                </p>
-                            </div>
+                        <div className="mt-4 text-center">
+                            <p className="text-gray-400 text-xs">
+                                Ready to transform your vision?
+                            </p>
+                            <p className="text-violet-300 text-xs font-medium mt-1">
+                                Let's innovate together
+                            </p>
                         </div>
                     </div>
                 </nav>
@@ -309,3 +246,5 @@ export const Header = () => {
         </header>
     );
 };
+
+export default Header;
