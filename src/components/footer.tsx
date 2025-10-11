@@ -13,7 +13,7 @@ const menus = {
     Menu: [
         {
             title: "Home",
-            href: "#",
+            href: "/",
         },
         {
             title: "Pricing",
@@ -27,11 +27,11 @@ const menus = {
     Company: [
         {
             title: "About",
-            href: "#",
+            href: "/about",
         },
         {
             title: "Contact us",
-            href: "#",
+            href: "/contact",
         },
         {
             title: "Careers",
