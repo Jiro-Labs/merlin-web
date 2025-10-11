@@ -37,7 +37,7 @@ export default function Contact() {
                 <div className="w-full">
                     <Button
                         className="
-                        block mx-auto px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
+                        block mx-auto px-6 bg-gradient-to-r from-violet-500 to-purple-600
                         hover:from-violet-600 hover:to-purple-700 
                         rounded-full transition-all duration-300 ease-in-out
                         transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25
