@@ -7,7 +7,9 @@ export default function Contact() {
         <div className="pt-14 sm:pt-16 md:pt-18 lg:pt-20">
             <div className="mx-5">
                 <div className="space-y-5 max-w-4xl mx-auto my-40 text-white text-center">
-                    <p className="text-5xl bold">Get in touch with us!</p>
+                    <p className="text-5xl font-extrabold">
+                        Get in touch with us!
+                    </p>
                     <p className="text-xl">
                         If You Have Any Ideas, Please Fill Out The Form Below
                         And Our Consultants Will Get In Touch With You Shortly.
@@ -37,7 +39,7 @@ export default function Contact() {
                 <div className="w-full">
                     <Button
                         className="
-                        block mx-auto px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
+                        block mx-auto px-6 bg-gradient-to-r from-violet-500 to-purple-600
                         hover:from-violet-600 hover:to-purple-700 
                         rounded-full transition-all duration-300 ease-in-out
                         transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25

@@ -5,7 +5,7 @@ export default function About() {
         <div className="space-y-20 pt-14 sm:pt-16 md:pt-18 lg:pt-20">
             <div className="mx-5 mt-40">
                 <div className="space-y-5 max-w-3xl mx-auto text-white text-center">
-                    <p className="text-5xl bold">About merlin labs</p>
+                    <p className="text-5xl bold">About Merlin Labs</p>
                     <p className="text-xl">
                         Merlin Labs specializes in developing IT solutions and
                         comprehensive digital marketing strategies specifically
