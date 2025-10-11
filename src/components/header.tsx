@@ -1,9 +1,9 @@
 "use client";
 
+import { ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { ChevronRight, Menu, X } from "lucide-react";
 
 const navigationItems = [
     { title: "HOME", href: "/" },
@@ -42,14 +42,14 @@ export const Header = () => {
     return (
         <header
             className={`
-        fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
-        md:text-white text-black
-        ${
-            isScrolled
-                ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
-                : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
-        }
-      `}
+                fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
+                md:text-white text-black
+                ${
+                    isScrolled
+                        ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
+                        : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
+                }
+            `}
         >
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-14 sm:h-16 md:h-16 lg:h-20">
@@ -86,11 +86,11 @@ export const Header = () => {
                                 href={item.href}
                                 onClick={handleNavClick}
                                 className="
-                  relative px-3 py-2 text-sm font-medium rounded-md
-                  transition-all duration-200 ease-in-out
-                  hover:bg-white/10 hover:text-white
-                  focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                "
+                                relative px-3 py-2 text-sm font-medium rounded-md
+                                transition-all duration-200 ease-in-out
+                                hover:bg-white/10 hover:text-white
+                                focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                                "
                             >
                                 {item.title}
                             </a>
@@ -101,13 +101,13 @@ export const Header = () => {
                     <div className="hidden md:block">
                         <Button
                             className="
-                px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
-                hover:from-violet-600 hover:to-purple-700 
-                rounded-full transition-all duration-300 ease-in-out
-                transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25
-                focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                text-sm font-medium
-              "
+                            px-6 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600
+                            hover:from-violet-600 hover:to-purple-700 
+                            rounded-full transition-all duration-300 ease-in-out
+                            transform hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25
+                            focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                            text-sm font-medium
+                            "
                         >
                             <span>GET STARTED</span>
                             <ChevronRight size={16} className="ml-1" />
@@ -127,47 +127,52 @@ export const Header = () => {
                             <Menu
                                 size={24}
                                 className={`
-                  absolute inset-0 transition-all duration-200 transform
-                  ${isMobileMenuOpen ? "opacity-0 scale-75 -rotate-12" : "opacity-100 scale-100 rotate-0"}
-                `}
+                                    absolute inset-0 transition-all duration-200 transform
+                                    ${isMobileMenuOpen ? "opacity-0 scale-75 -rotate-12" : "opacity-100 scale-100 rotate-0"}
+                                `}
                             />
                             <X
                                 size={24}
                                 className={`
-                  absolute inset-0 transition-all duration-200 transform
-                  ${isMobileMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-12"}
-                `}
+                                    absolute inset-0 transition-all duration-200 transform
+                                    ${isMobileMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-12"}
+                                `}
                             />
                         </div>
                     </Button>
                 </div>
             </div>
 
-            {/* Mobile menu overlay */}
+            {/* Mobile menu overlay (md:hidden) */}
             <div
                 className={`
-          fixed inset-0 z-40 md:hidden pointer-events-auto
-          transition-all duration-300 ease-in-out
-          ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
-        `}
+                    fixed inset-0 z-40 md:hidden
+                    transition-all duration-300 ease-in-out
+                    ${isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}
+                `}
                 aria-hidden={!isMobileMenuOpen}
             >
-                <div
+                {/* Backdrop (now a real button for accessibility) */}
+                <button
+                    type="button"
                     className={`
-            absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300
-            ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
-          `}
+                        absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300
+                        ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
+                    `}
                     onClick={toggleMobileMenu}
+                    aria-label="Close mobile menu"
+                    tabIndex={isMobileMenuOpen ? 0 : -1}
                 />
 
+                {/* Panel */}
                 <nav
                     className={`
-            absolute top-0 left-0 right-0 bg-black/95 text-white
-            min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
-            px-4 pt-6 pb-8 overflow-y-auto
-            transform transition-transform duration-300
-            ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-6"}
-          `}
+                        absolute top-0 left-0 right-0 bg-black/95 text-white
+                        min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)]
+                        px-4 pt-6 pb-8 overflow-y-auto
+                        transform transition-transform duration-300
+                        ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-6"}
+                    `}
                     role="dialog"
                     aria-modal="true"
                 >
@@ -196,12 +201,12 @@ export const Header = () => {
                                 href={item.href}
                                 onClick={handleNavClick}
                                 className={`
-                  block px-3 py-3 text-base font-medium rounded-lg text-white
-                  transition-all duration-200 ease-in-out
-                  hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-purple-500/20
-                  focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                  transform active:scale-95
-                `}
+                                  block px-3 py-3 text-base font-medium rounded-lg text-white
+                                  transition-all duration-200 ease-in-out
+                                  hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-purple-500/20
+                                  focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                                  transform active:scale-95
+                                `}
                                 style={{ transitionDelay: `${index * 50}ms` }}
                             >
                                 <div className="flex items-center justify-between">
@@ -218,14 +223,14 @@ export const Header = () => {
                     <div className="pt-6 mt-6 border-t border-white/10">
                         <Button
                             className="
-                w-full px-4 py-3 bg-gradient-to-r from-violet-500 to-purple-600
-                hover:from-violet-600 hover:to-purple-700 
-                rounded-lg transition-all duration-300 ease-in-out
-                transform hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/25
-                active:scale-95
-                focus:outline-none focus:ring-2 focus:ring-violet-500/50
-                text-sm font-semibold
-              "
+                                w-full px-4 py-3 bg-gradient-to-r from-violet-500 to-purple-600
+                                hover:from-violet-600 hover:to-purple-700 
+                                rounded-lg transition-all duration-300 ease-in-out
+                                transform hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/25
+                                active:scale-95
+                                focus:outline-none focus:ring-2 focus:ring-violet-500/50
+                                text-sm font-semibold
+                              "
                             onClick={handleNavClick}
                         >
                             <span>GET STARTED</span>
