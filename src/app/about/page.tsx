@@ -59,7 +59,7 @@ export default function About() {
                     </div>
                     <div>
                         <p className="text-2xl bold text-violet-900">VALUES</p>
-                        <ul className="px-6 list-disc space-y-3 my-3">
+                        <ul className="text-pretty px-6 list-disc space-y-3 my-3">
                             <li>
                                 Proven Solutions: Delivering full-stack growth
                                 solutions with a strong track record.
