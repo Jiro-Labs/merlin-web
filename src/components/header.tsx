@@ -2,6 +2,7 @@
 
 import { ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
@@ -57,25 +58,29 @@ export const Header = () => {
                     <div className="flex-shrink-0 z-50">
                         {/* Mobile Logo: hide when mobile menu is open to avoid duplicate */}
                         {!isMobileMenuOpen && (
-                            <Image
-                                className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
-                                src="/logo-mobile.svg"
-                                alt="Merlin Labs - Web3 Solutions"
-                                height={32}
-                                width={146}
-                                priority
-                            />
+                            <Link href="/">
+                                <Image
+                                    className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
+                                    src="/logo-mobile.svg"
+                                    alt="Merlin Labs - Web3 Solutions"
+                                    height={32}
+                                    width={146}
+                                    priority
+                                />
+                            </Link>
                         )}
 
                         {/* Desktop & Tablet Logo (768px+) */}
-                        <Image
-                            className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"
-                            src="/logo.png"
-                            alt="Merlin Labs - Web3 Solutions"
-                            height={48}
-                            width={168}
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"
+                                src="/logo.png"
+                                alt="Merlin Labs - Web3 Solutions"
+                                height={48}
+                                width={168}
+                                priority
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation (md and up) */}

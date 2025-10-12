@@ -138,10 +138,12 @@ export const WhyChooseUs = ({
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
-                        <p>{ctaButtonText}</p>
-                        <ChevronRight />
-                    </Button>
+                    <Link href="/contact">
+                        <Button className="max-auto !p-5 bg-violet-500 hover:bg-violet-700 rounded-full">
+                            <p>{ctaButtonText}</p>
+                            <ChevronRight />
+                        </Button>
+                    </Link>
                 </Link>
             </div>
         </>

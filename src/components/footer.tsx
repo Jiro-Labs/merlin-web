@@ -215,12 +215,12 @@ export const Footer = () => {
                             Copyright © 2025 MerlinLabs. All rights reserved ®
                         </p>
                         <Link
-                            href="https://www.MerlinLabs.co"
+                            href="http://merlin-labs.co/"
                             className="hover:text-white transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            www.MerlinLabs.co
+                            merlin-labs.co
                         </Link>
                     </div>
                 </div>
