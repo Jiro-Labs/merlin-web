@@ -93,10 +93,11 @@ export const WhyChooseUs = ({
         <>
             <div
                 ref={whyChooseUsRef}
-                className={`hidden md:block my-4 md:my-8 transition-all duration-1000 ease-out ${isWhyChooseUsVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                    }`}
+                className={`hidden md:block my-4 md:my-8 transition-all duration-1000 ease-out ${
+                    isWhyChooseUsVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                }`}
             >
                 <p className="text-center text-white font-bold text-2xl sm:text-3xl md:text-4xl my-4 md:my-8">
                     {title}
@@ -108,20 +109,22 @@ export const WhyChooseUs = ({
             </div>
             <div
                 ref={whyChooseUsMobileRef}
-                className={`md:hidden transition-all duration-1000 ease-out ${isWhyChooseUsVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                    }`}
+                className={`md:hidden transition-all duration-1000 ease-out ${
+                    isWhyChooseUsVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                }`}
             >
                 <img className="w-full" src="/reason-mobile.svg" alt="reason" />
             </div>
 
             <div
                 ref={ctaRef}
-                className={`my-8 md:my-16 text-center transition-all duration-1000 ease-out ${isCtaVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                    }`}
+                className={`my-8 md:my-16 text-center transition-all duration-1000 ease-out ${
+                    isCtaVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                }`}
                 style={{ transitionDelay: isCtaVisible ? "200ms" : "0ms" }}
             >
                 <p className="text-white font-bold text-2xl sm:text-3xl md:text-4xl">

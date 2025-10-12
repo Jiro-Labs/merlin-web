@@ -2,9 +2,9 @@
 
 import { ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import Link from "next/link";
 
 const navigationItems = [
     { title: "HOME", href: "/" },
@@ -45,9 +45,10 @@ export const Header = () => {
             className={`
                 fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
                 md:text-white text-black
-                ${isScrolled
-                    ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
-                    : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
+                ${
+                    isScrolled
+                        ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
+                        : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
                 }
             `}
         >
