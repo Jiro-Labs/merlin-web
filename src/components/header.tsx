@@ -4,6 +4,7 @@ import { ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const navigationItems = [
     { title: "HOME", href: "/" },
@@ -44,10 +45,9 @@ export const Header = () => {
             className={`
                 fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
                 md:text-white text-black
-                ${
-                    isScrolled
-                        ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
-                        : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
+                ${isScrolled
+                    ? "md:bg-transparent md:backdrop-blur-xl md:shadow-2xl md:shadow-black/20 bg-white/95 backdrop-blur-sm shadow-lg"
+                    : "md:bg-transparent md:backdrop-blur-lg md:shadow-lg md:shadow-slate-900/5 bg-white/90 backdrop-blur-sm shadow-md"
                 }
             `}
         >
@@ -57,25 +57,29 @@ export const Header = () => {
                     <div className="flex-shrink-0 z-50">
                         {/* Mobile Logo: hide when mobile menu is open to avoid duplicate */}
                         {!isMobileMenuOpen && (
-                            <Image
-                                className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
-                                src="/logo-mobile.svg"
-                                alt="Merlin Labs - Web3 Solutions"
-                                height={32}
-                                width={146}
-                                priority
-                            />
+                            <Link href="/">
+                                <Image
+                                    className="h-7 w-auto sm:h-8 md:hidden transition-all duration-300"
+                                    src="/logo-mobile.svg"
+                                    alt="Merlin Labs - Web3 Solutions"
+                                    height={32}
+                                    width={146}
+                                    priority
+                                />
+                            </Link>
                         )}
 
                         {/* Desktop & Tablet Logo (768px+) */}
-                        <Image
-                            className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"
-                            src="/logo.png"
-                            alt="Merlin Labs - Web3 Solutions"
-                            height={48}
-                            width={168}
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                className="hidden md:block h-10 w-auto lg:h-12 transition-all duration-300"
+                                src="/logo.png"
+                                alt="Merlin Labs - Web3 Solutions"
+                                height={48}
+                                width={168}
+                                priority
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation (md and up) */}
