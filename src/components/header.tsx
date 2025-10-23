@@ -10,6 +10,7 @@ const navigationItems = [
     { title: "HOME", href: "/" },
     { title: "ABOUT", href: "/about" },
     { title: "CONTACT", href: "/contact" },
+    { title: "BLOG", href: "/blog" },
 ] as const;
 
 export const Header = () => {
