@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 export default function Blog() {
     return (
@@ -51,27 +51,28 @@ export default function Blog() {
                     className="bg-transparent lg:-ml-2"
                 >
                     <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
-                        {Array(10)
-                            .fill(0)
-                            .map(() => (
-                                <CarouselItem className="pl-4 sm:pl-5 md:pl-6 basis-4/5 sm:basis-1/2 lg:basis-1/3">
-                                    <div className="w-full aspect-[5/3] relative ">
-                                        <Image
-                                            className="object-cover"
-                                            fill
-                                            src="/blog-placeholder.jpg"
-                                            alt="placeholder"
-                                        />
-                                    </div>
-                                    <p className="my-6 font-bold">TITLE HERE</p>
-                                    <Button
-                                        className="rounded-2xl border-1 border-white"
-                                        variant="ghost"
-                                    >
-                                        READ
-                                    </Button>
-                                </CarouselItem>
-                            ))}
+                        {[...Array(10).keys()].map((key) => (
+                            <CarouselItem
+                                key={key}
+                                className="pl-4 sm:pl-5 md:pl-6 basis-4/5 sm:basis-1/2 lg:basis-1/3"
+                            >
+                                <div className="w-full aspect-[5/3] relative ">
+                                    <Image
+                                        className="object-cover"
+                                        fill
+                                        src="/blog-placeholder.jpg"
+                                        alt="placeholder"
+                                    />
+                                </div>
+                                <p className="my-6 font-bold">TITLE HERE</p>
+                                <Button
+                                    className="rounded-2xl border-1 border-white"
+                                    variant="ghost"
+                                >
+                                    READ
+                                </Button>
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                 </Carousel>
             </div>
@@ -82,27 +83,28 @@ export default function Blog() {
                     className="bg-transparent lg:-ml-2"
                 >
                     <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
-                        {Array(10)
-                            .fill(0)
-                            .map(() => (
-                                <CarouselItem className="pl-4 sm:pl-5 md:pl-6 basis-4/5 sm:basis-1/2 lg:basis-1/3">
-                                    <div className="w-full aspect-[5/3] relative ">
-                                        <Image
-                                            className="object-cover"
-                                            fill
-                                            src="/blog-placeholder.jpg"
-                                            alt="placeholder"
-                                        />
-                                    </div>
-                                    <p className="my-6 font-bold">TITLE HERE</p>
-                                    <Button
-                                        className="rounded-2xl border-1 border-white"
-                                        variant="ghost"
-                                    >
-                                        READ
-                                    </Button>
-                                </CarouselItem>
-                            ))}
+                        {[...Array(10).keys()].map((key) => (
+                            <CarouselItem
+                                key={key}
+                                className="pl-4 sm:pl-5 md:pl-6 basis-4/5 sm:basis-1/2 lg:basis-1/3"
+                            >
+                                <div className="w-full aspect-[5/3] relative ">
+                                    <Image
+                                        className="object-cover"
+                                        fill
+                                        src="/blog-placeholder.jpg"
+                                        alt="placeholder"
+                                    />
+                                </div>
+                                <p className="my-6 font-bold">TITLE HERE</p>
+                                <Button
+                                    className="rounded-2xl border-1 border-white"
+                                    variant="ghost"
+                                >
+                                    READ
+                                </Button>
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                 </Carousel>
             </div>
